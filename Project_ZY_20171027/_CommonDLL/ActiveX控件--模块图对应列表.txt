@@ -1,0 +1,9 @@
+SpectrumChart.ocx      			光谱图（已弃用）
+FSCANOccupation.ocx    			各频道占用度图
+FSCANRealTime.ocx      			样本最值图
+SampleFeatureChart.ocx 			样本特征图
+LevelIntensityScatterDiagram.ocx	电平分布图
+OccupationCartogram.ocx			频谱占用情况图
+CompareCartogram.ocx			样本对比图
+IFClientFallChat3D.ocx			电平三维图
+LevelFallChat.ocx			电平瀑布图/光谱图 SetStyle(int) 1=电平瀑布图，2=光谱图

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap>
+  <siteMapNode title="设备管理" icon="icon9.png">
+    <siteMapNode title="设备管理" description="" url="../T02Equipment/EquipmentList.aspx"  icon="10" right="1"/>
+    <siteMapNode title="用户设备授权" description="" url="../T02Equipment/UserEquipmentGrantList.aspx" icon="22" right="0"/>
+  </siteMapNode>
+  <siteMapNode title="激活码管理" icon="icon1401.png">
+    <siteMapNode title="激活码管理" description="" url="../T04ActiveCode/ActiveCodeList.aspx"  icon="12" right="0"/>
+  </siteMapNode>
+  <siteMapNode title="定时启动记录管理" icon="icon3.png">
+    <siteMapNode title="定时启动记录" description="" url="../T03Timing/TimingList.aspx"  icon="20" right="1"/>
+  </siteMapNode>
+  <siteMapNode title="用户管理" icon="icon5.png">
+    <siteMapNode title="用户管理" description="" url="../T01User/UserList.aspx"  icon="19" right="0"/>
+  </siteMapNode>
+  <siteMapNode title="系统配置" icon="icon5.png">
+    <siteMapNode title="系统配置" description="" url="../T05Config/SystemConfig.aspx"  icon="28" right="0"/>
+  </siteMapNode>
+</siteMap>

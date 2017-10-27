@@ -1,0 +1,133 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="__MP_Dialog.master.cs" Inherits="__MP_Dialog" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta content="IE=7.0000" http-equiv="X-UA-Compatible" />
+    <!--公共函数，与界面无关-->
+    <script src="../include/procommon.js" type="text/javascript"></script>
+    <script src="../include/proxml.js" type="text/javascript"></script>
+    <script src="../include/protype.js" type="text/javascript"></script>
+    <script src="../include/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <!--公共控件，与界面无关-->
+    <script src="../include/jquery.autocomplete.js" type="text/javascript"></script>
+    <script src="../include/procontrols.js" type="text/javascript"></script>
+    <script src="../include/My97DatePicker/WdatePicker.js" type="text/javascript"></script>
+    <script src="../include/tree.js" type="text/javascript"></script>
+    <script src="../include/frame/mousemove.js" type="text/javascript"></script>
+    <!--与母版页面有关的函数-->
+    <script src="../include/frame/dialog.js" type="text/javascript"></script>
+    <script src="../include/frame/biz.js" type="text/javascript"></script>
+    <script src="../include/validator.min.js" type="text/javascript"></script>
+
+    <link href="../images/style.css" rel="stylesheet" type="text/css" />
+    <link href="../images/frame.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        //$j(document).ready(function () {
+        //    $j("input.input_btn").each(function () {
+        //        var btnicon = $j(this).attr("btnicon");
+        //        if (btnicon != null) {
+        //            $j(this).css("padding-left", "36px");
+        //            $j(this).css("text-align", "left");
+        //            $j(this).css("background-image", "url('../images/button/" + btnicon + "')");
+        //            var btnwidth = 94;
+        //            $j(this).val($j(this).val().trim());
+        //            switch ($j(this).val().trim().length) {
+        //                case 3: btnwidth = 107; break;
+        //                case 4: btnwidth = 120; break;
+        //                case 5: btnwidth = 133; break;
+        //            }
+        //            $j(this).css("width", btnwidth + "px");
+        //        }
+        //    });
+        //});
+    </script>
+</head>
+<body onkeydown="if(event.keyCode==27){event.keyCode=0;event.returnValue=false;}">
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div id="floater_alert" style="z-index: 1001; left: 0px; display: none; position: absolute; top: 0px;">
+            <table id="Tbl_alert" border="0" cellpadding="0" cellspacing="0" style="vertical-align: middle; text-align: center; cursor: default;">
+                <tr id="tr11_floathead">
+                    <td class="border1" />
+                    <td class="border2" />
+                    <td class="border3" />
+                </tr>
+                <tr id="tr21_floathead">
+                    <td class="border4" />
+                    <td class="border5">
+                        <table cellpadding="0" cellspacing="0" width="100%" border="0">
+                            <tr>
+                                <td width="20" />
+                                <td align="center">
+                                    <span id="td_alerttitle" style="width: 200px; font-weight: bold; color: white;"></span>
+                                </td>
+                                <td width="30" align="right">
+                                    <img id="img_close" style="border-width: 0" title="关闭窗口" src="../images/border/btn_501.png" onclick="__OnMessageButtonClick(-1)"
+                                        style="cursor: hand" onmouseover="this.src='../images/border/btn_502.png'" onmouseout="this.src='../images/border/btn_501.png'" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="border6" />
+                </tr>
+                <tr id="tr31_floathead">
+                    <td class="border7" />
+                    <td class="border8" />
+                    <td class="border9" />
+                </tr>
+                <tr>
+                    <td class="border10" />
+                    <td class="border11" id="td_alertcontent">
+                        <!--- 通过代码填充提示信息 --->
+                    </td>
+                    <td class="border12" />
+                </tr>
+                <tr>
+                    <td class="border13" />
+                    <td class="border14" />
+                    <td class="border15" />
+                </tr>
+            </table>
+        </div>
+        <div id="floater" style="z-index: 102; left: 0px; visibility: hidden; position: absolute; top: 0px">
+            <table class="msgtable" id="Table1" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                    <td valign="top">
+                        <table class="msgtitle" cellspacing="0" cellpadding="1" width="100%" border="0">
+                            <tr>
+                                <td width="34" />
+                                <td id="floathead" style="cursor: default" valign="middle" />
+                                <td valign="top" align="center" width="50">
+                                    <div class="msgbutton" id="btnCloseMsg" title="关闭提示窗口" onclick="__CloseMessageBox()">
+                                        <bgsound id="msgsound" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="msgcontent" valign="top" colspan="3">
+                        <table style="table-layout: fixed; clip: rect(auto auto auto auto);" height="100%"
+                            width="100%">
+                            <tr>
+                                <td style="word-wrap: break-word" valign="top">
+                                    <div id="MessageContent" style="padding-right: 7px; padding-left: 7px; padding-bottom: 6px; width: 100%; padding-top: 6px; background-repeat: no-repeat; height: 100%">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+    </form>
+</body>
+</html>

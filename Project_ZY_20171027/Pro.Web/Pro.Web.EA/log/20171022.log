@@ -1,0 +1,635 @@
+时间：2017/10/22 0:39:04
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 0:39:24
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 0:42:18
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 0:43:41
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 0:44:13
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 0:44:28
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 0:44:39
+详细信息：
+Error Caught in Application_Error event
+Error Message:文件“/ProWebEA/T02Equipment/TimingList.aspx”不存在。
+Stack Trace:   在 System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+-----------------------------
+时间：2017/10/22 0:45:01
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 0:45:17
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 0:45:20
+详细信息：
+Error Caught in Application_Error event
+Error Message:文件“/ProWebEA/T02Equipment/TimingList.aspx”不存在。
+Stack Trace:   在 System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+-----------------------------
+时间：2017/10/22 0:45:43
+详细信息：
+Error Caught in Application_Error event
+Error Message:文件“/ProWebEA/T02Equipment/TimingList.aspx”不存在。
+Stack Trace:   在 System.Web.UI.Util.CheckVirtualFileExists(VirtualPath virtualPath)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   在 System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   在 System.Web.Compilation.BuildManager.CreateInstanceFromVirtualPath(VirtualPath virtualPath, Type requiredBaseType, HttpContext context, Boolean allowCrossApp)
+   在 System.Web.UI.PageHandlerFactory.GetHandlerHelper(HttpContext context, String requestType, VirtualPath virtualPath, String physicalPath)
+   在 System.Web.UI.PageHandlerFactory.GetHandler(HttpContext context, String requestType, String virtualPath, String path)
+   在 System.Web.HttpApplication.MaterializeHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()
+   在 System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean& completedSynchronously)
+-----------------------------
+时间：2017/10/22 0:46:13
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 0:46:28
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 0:47:24
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 0:47:32
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 0:48:24
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 0:48:46
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 0:49:27
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 0:49:38
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 0:50:16
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 0:50:32
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 0:53:57
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 0:54:29
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 0:59:39
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 0:59:48
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 1:14:03
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 1:30:33
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 1:31:03
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 1:31:30
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 1:32:06
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 1:32:22
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 1:32:48
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 1:33:27
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 1:41:26
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 1:41:42
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 1:45:12
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 1:45:41
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 11:27:17
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 11:30:47
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 11:54:45
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 11:55:58
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 11:56:16
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 11:57:36
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 11:57:44
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 11:59:53
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 12:00:18
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 12:00:26
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 12:00:34
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 12:12:44
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 12:13:44
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 12:23:26
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 12:23:49
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 12:45:01
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 12:45:30
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 12:47:01
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 12:48:02
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 12:50:05
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 12:50:26
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 12:51:43
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 12:52:12
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 12:52:24
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 12:52:33
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 12:55:48
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 12:56:09
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 13:09:35
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 13:26:39
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 13:31:48
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 13:32:03
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 13:33:39
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/22 13:36:21
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/22 13:40:55
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 13:42:39
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 13:54:03
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 13:54:12
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 13:55:49
+详细信息：
+Error Caught in Application_Error event
+Error Message:操作超时
+Stack Trace:   在 System.Net.HttpWebRequest.GetResponse()
+   在 System.ServiceModel.Channels.HttpChannelFactory`1.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+-----------------------------
+时间：2017/10/22 14:33:47
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 14:41:17
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 15:10:01
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 15:10:16
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 15:12:07
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/22 15:24:35
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/22 15:32:57
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 15:34:38
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 15:35:11
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 15:35:30
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 15:37:11
+详细信息：
+WebServiceHelper.InvokeMethod执行出错：调用的目标发生了异常。
+相关信息：
+	method:GetList
+-----------------------------
+时间：2017/10/22 15:37:11
+详细信息：
+Error Caught in Application_Error event
+Error Message:未将对象引用设置到对象的实例。
+Stack Trace:   在 AjaxPage.OnInit(EventArgs e) 位置 c:\Users\rox\Desktop\Project_ZY_20171021\Project\Pro.Web\Pro.Web.EA\App_Code\AjaxPage.cs:行号 44
+   在 FramePage.OnInit(EventArgs e) 位置 c:\Users\rox\Desktop\Project_ZY_20171021\Project\Pro.Web\Pro.Web.EA\App_Code\FramePage.cs:行号 73
+   在 System.Web.UI.Control.InitRecursive(Control namingContainer)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+-----------------------------
+时间：2017/10/22 15:41:31
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 15:43:30
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 15:44:03
+详细信息：
+WebServiceHelper.InvokeMethod执行出错：调用的目标发生了异常。
+相关信息：
+	method:GetList
+-----------------------------
+时间：2017/10/22 15:44:03
+详细信息：
+Error Caught in Application_Error event
+Error Message:未将对象引用设置到对象的实例。
+Stack Trace:   在 AjaxPage.OnInit(EventArgs e) 位置 c:\Users\rox\Desktop\Project_ZY_20171021\Project\Pro.Web\Pro.Web.EA\App_Code\AjaxPage.cs:行号 44
+   在 FramePage.OnInit(EventArgs e) 位置 c:\Users\rox\Desktop\Project_ZY_20171021\Project\Pro.Web\Pro.Web.EA\App_Code\FramePage.cs:行号 73
+   在 System.Web.UI.Control.InitRecursive(Control namingContainer)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+-----------------------------
+时间：2017/10/22 15:45:16
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 15:45:33
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 15:47:51
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 15:47:59
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 15:49:09
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/22 15:50:34
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 15:50:56
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 15:58:47
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 15:59:47
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:00:02
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:00:21
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:02:54
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:03:08
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:03:32
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:03:41
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:04:10
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:04:32
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:05:52
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:06:20
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:06:52
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:07:07
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:08:54
+详细信息：
+WebServiceHelper.InvokeMethod执行出错：调用的目标发生了异常。
+相关信息：
+	method:Delete
+-----------------------------
+时间：2017/10/22 16:09:32
+详细信息：
+Error Caught in Application_Error event
+Error Message:未将对象引用设置到对象的实例。
+Stack Trace:   在 AjaxPage.OnInit(EventArgs e) 位置 c:\Users\rox\Desktop\Project_ZY_20171021\Project\Pro.Web\Pro.Web.EA\App_Code\AjaxPage.cs:行号 44
+   在 FramePage.OnInit(EventArgs e) 位置 c:\Users\rox\Desktop\Project_ZY_20171021\Project\Pro.Web\Pro.Web.EA\App_Code\FramePage.cs:行号 73
+   在 System.Web.UI.Control.InitRecursive(Control namingContainer)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+-----------------------------
+时间：2017/10/22 16:09:34
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:09:42
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:11:33
+详细信息：
+WebServiceHelper.InvokeMethod执行出错：调用的目标发生了异常。
+相关信息：
+	method:Delete
+-----------------------------
+时间：2017/10/22 16:11:35
+详细信息：
+Error Caught in Application_Error event
+Error Message:未将对象引用设置到对象的实例。
+Stack Trace:   在 AjaxPage.OnInit(EventArgs e) 位置 c:\Users\rox\Desktop\Project_ZY_20171021\Project\Pro.Web\Pro.Web.EA\App_Code\AjaxPage.cs:行号 44
+   在 FramePage.OnInit(EventArgs e) 位置 c:\Users\rox\Desktop\Project_ZY_20171021\Project\Pro.Web\Pro.Web.EA\App_Code\FramePage.cs:行号 73
+   在 System.Web.UI.Control.InitRecursive(Control namingContainer)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+-----------------------------
+时间：2017/10/22 16:11:38
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:11:53
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:21:12
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:21:32
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:22:03
+详细信息：
+WebServiceHelper.InvokeMethod执行出错：调用的目标发生了异常。
+相关信息：
+	method:Delete
+-----------------------------
+时间：2017/10/22 16:22:03
+详细信息：
+Error Caught in Application_Error event
+Error Message:未将对象引用设置到对象的实例。
+Stack Trace:   在 AjaxPage.OnInit(EventArgs e) 位置 c:\Users\rox\Desktop\Project_ZY_20171021\Project\Pro.Web\Pro.Web.EA\App_Code\AjaxPage.cs:行号 44
+   在 FramePage.OnInit(EventArgs e) 位置 c:\Users\rox\Desktop\Project_ZY_20171021\Project\Pro.Web\Pro.Web.EA\App_Code\FramePage.cs:行号 73
+   在 System.Web.UI.Control.InitRecursive(Control namingContainer)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+-----------------------------
+时间：2017/10/22 16:22:05
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:22:52
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:24:53
+详细信息：
+WebServiceHelper.InvokeMethod执行出错：调用的目标发生了异常。
+相关信息：
+	method:Delete
+-----------------------------
+时间：2017/10/22 16:24:53
+详细信息：
+Error Caught in Application_Error event
+Error Message:未将对象引用设置到对象的实例。
+Stack Trace:   在 AjaxPage.OnInit(EventArgs e) 位置 c:\Users\rox\Desktop\Project_ZY_20171021\Project\Pro.Web\Pro.Web.EA\App_Code\AjaxPage.cs:行号 44
+   在 FramePage.OnInit(EventArgs e) 位置 c:\Users\rox\Desktop\Project_ZY_20171021\Project\Pro.Web\Pro.Web.EA\App_Code\FramePage.cs:行号 73
+   在 System.Web.UI.Control.InitRecursive(Control namingContainer)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+-----------------------------
+时间：2017/10/22 16:26:32
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:27:23
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:35:02
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/22 16:35:55
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/22 16:45:55
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:46:19
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:49:25
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:49:40
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:54:36
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:54:53
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/22 16:55:00
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/22 16:56:46
+详细信息：
+Application start......
+-----------------------------

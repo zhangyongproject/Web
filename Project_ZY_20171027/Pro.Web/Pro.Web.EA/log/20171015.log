@@ -1,0 +1,172 @@
+时间：2017/10/15 21:48:39
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/15 21:53:15
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/15 21:53:33
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/15 22:05:47
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/15 22:06:06
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/15 22:11:41
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/15 22:12:49
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/15 22:12:57
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/15 22:13:20
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/15 22:13:54
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/15 22:19:17
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/15 22:28:17
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/15 22:28:24
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/15 22:29:14
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/15 22:43:10
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/15 22:56:49
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/15 22:57:18
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/15 22:58:19
+详细信息：
+WebServiceHelper.InvokeMethod执行出错：调用的目标发生了异常。
+相关信息：
+	method:GetMenuInfo
+-----------------------------
+时间：2017/10/15 22:58:19
+详细信息：
+Error Caught in Application_Error event
+Error Message:未将对象引用设置到对象的实例。
+Stack Trace:   在 AjaxPage.OnInit(EventArgs e) 位置 d:\Projects\Project\Pro.Web\Pro.Web.EA\App_Code\AjaxPage.cs:行号 44
+   在 FramePage.OnInit(EventArgs e) 位置 d:\Projects\Project\Pro.Web\Pro.Web.EA\App_Code\FramePage.cs:行号 71
+   在 System.Web.UI.Control.InitRecursive(Control namingContainer)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+-----------------------------
+时间：2017/10/15 22:59:13
+详细信息：
+WebServiceHelper.InvokeMethod执行出错：调用的目标发生了异常。
+相关信息：
+	method:GetMenuInfo
+-----------------------------
+时间：2017/10/15 22:59:13
+详细信息：
+Error Caught in Application_Error event
+Error Message:未将对象引用设置到对象的实例。
+Stack Trace:   在 AjaxPage.OnInit(EventArgs e) 位置 d:\Projects\Project\Pro.Web\Pro.Web.EA\App_Code\AjaxPage.cs:行号 44
+   在 FramePage.OnInit(EventArgs e) 位置 d:\Projects\Project\Pro.Web\Pro.Web.EA\App_Code\FramePage.cs:行号 71
+   在 System.Web.UI.Control.InitRecursive(Control namingContainer)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+-----------------------------
+时间：2017/10/15 22:59:15
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/15 23:01:19
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/15 23:01:49
+详细信息：
+WebServiceHelper.InvokeMethod执行出错：调用的目标发生了异常。
+相关信息：
+	method:GetMenuInfo
+-----------------------------
+时间：2017/10/15 23:01:49
+详细信息：
+Error Caught in Application_Error event
+Error Message:未将对象引用设置到对象的实例。
+Stack Trace:   在 AjaxPage.OnInit(EventArgs e) 位置 d:\Projects\Project\Pro.Web\Pro.Web.EA\App_Code\AjaxPage.cs:行号 44
+   在 FramePage.OnInit(EventArgs e) 位置 d:\Projects\Project\Pro.Web\Pro.Web.EA\App_Code\FramePage.cs:行号 71
+   在 System.Web.UI.Control.InitRecursive(Control namingContainer)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+-----------------------------
+时间：2017/10/15 23:01:51
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/15 23:03:13
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/15 23:04:52
+详细信息：
+WebServiceHelper.InvokeMethod执行出错：调用的目标发生了异常。
+相关信息：
+	method:GetMenuInfo
+-----------------------------
+时间：2017/10/15 23:04:52
+详细信息：
+Error Caught in Application_Error event
+Error Message:未将对象引用设置到对象的实例。
+Stack Trace:   在 AjaxPage.OnInit(EventArgs e) 位置 d:\Projects\Project\Pro.Web\Pro.Web.EA\App_Code\AjaxPage.cs:行号 44
+   在 FramePage.OnInit(EventArgs e) 位置 d:\Projects\Project\Pro.Web\Pro.Web.EA\App_Code\FramePage.cs:行号 71
+   在 System.Web.UI.Control.InitRecursive(Control namingContainer)
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+-----------------------------
+时间：2017/10/15 23:05:05
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/15 23:07:03
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/15 23:07:25
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/15 23:07:45
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/15 23:11:38
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/15 23:11:58
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/15 23:12:58
+详细信息：
+Application end.
+-----------------------------

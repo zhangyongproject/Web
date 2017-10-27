@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://yixiubox.com:5000/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://yixiubox.com:5000/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://yixiubox.com:5000/">
+      <s:element name="GetEquipmentInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strjson" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEquipmentInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEquipmentInfoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Active">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strjson" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ActiveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActiveResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIPList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strjson" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIPListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateIPListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetEquipmentInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEquipmentInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetEquipmentInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEquipmentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ActiveSoapIn">
+    <wsdl:part name="parameters" element="tns:Active" />
+  </wsdl:message>
+  <wsdl:message name="ActiveSoapOut">
+    <wsdl:part name="parameters" element="tns:ActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIPListSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateIPList" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIPListSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateIPListResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:portType name="EquipmentServiceSoap">
+    <wsdl:operation name="GetEquipmentInfo">
+      <wsdl:input message="tns:GetEquipmentInfoSoapIn" />
+      <wsdl:output message="tns:GetEquipmentInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Active">
+      <wsdl:input message="tns:ActiveSoapIn" />
+      <wsdl:output message="tns:ActiveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIPList">
+      <wsdl:input message="tns:UpdateIPListSoapIn" />
+      <wsdl:output message="tns:UpdateIPListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EquipmentServiceSoap" type="tns:EquipmentServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEquipmentInfo">
+      <soap:operation soapAction="http://yixiubox.com:5000/GetEquipmentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Active">
+      <soap:operation soapAction="http://yixiubox.com:5000/Active" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIPList">
+      <soap:operation soapAction="http://yixiubox.com:5000/UpdateIPList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://yixiubox.com:5000/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="EquipmentServiceSoap12" type="tns:EquipmentServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetEquipmentInfo">
+      <soap12:operation soapAction="http://yixiubox.com:5000/GetEquipmentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Active">
+      <soap12:operation soapAction="http://yixiubox.com:5000/Active" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIPList">
+      <soap12:operation soapAction="http://yixiubox.com:5000/UpdateIPList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://yixiubox.com:5000/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EquipmentService">
+    <wsdl:port name="EquipmentServiceSoap" binding="tns:EquipmentServiceSoap">
+      <soap:address location="http://localhost:5000/Server/EquipmentService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="EquipmentServiceSoap12" binding="tns:EquipmentServiceSoap12">
+      <soap12:address location="http://localhost:5000/Server/EquipmentService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

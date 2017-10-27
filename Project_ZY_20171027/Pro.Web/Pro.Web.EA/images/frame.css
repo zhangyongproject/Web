@@ -1,0 +1,347 @@
+﻿BODY
+{
+    font-family: 新宋体;
+    font-size: 10pt;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 97%;
+}
+
+.FixedDiv
+{
+    top: 0px;
+    position: fixed;
+    z-index: 999;
+}
+
+.MainTable
+{
+    background: #eeeeee;
+    border-collapse: collapse;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin: 0px;
+    width: 100%;
+    min-height: 800px;
+    font-size: 11pt; 
+}
+
+.MainHead
+{
+    background-image: url(frame/head.png);
+    background-repeat: no-repeat;
+    width: 60px;
+    height: 80px;
+    background-color: #025a9f;
+    padding: 16px 18px 0px 0px;
+}
+
+.head_userinfo
+{
+    background-image: url(frame/head_userinfo.png);
+    position: relative;
+    font-size: 10pt;
+    left: 5px;
+    top: 10px;
+    width: 81px;
+    height: 18px;
+    padding: 7px 0px 0px 100px;
+    text-align: left;
+    vertical-align: top;
+    color: Orange;
+}
+
+.MainBar
+{
+    width: 187px;
+    /*background-color:red;     */
+    vertical-align: top;
+    background-image: url(frame/menu_sub4.png);
+}
+
+    .MainBar div td
+    {
+        width: 187px;
+        vertical-align: middle;
+        padding: 0px;
+    }
+
+    .MainBar #divMoreInfo
+    {
+        width: 187px;
+        vertical-align: middle;
+        padding: 1px;
+    }
+
+#divMainMenu
+{
+    min-height: 120px;
+    width: 187px;
+}
+
+.MenuHead
+{
+    background-image: url(frame/menu_head.png);
+    height: 39px;
+}
+
+.MenuHead1
+{
+    background-image: url(frame/menu_head1.png);
+    height: 39px;
+}
+
+.MainMenuItem
+{
+    background-image: url(frame/menu_main1.png);
+    height: 32px;
+    font-size: 10pt;
+    cursor: pointer;
+    color: #000000;
+    font-weight: bold;
+    font-family: 微软雅黑;
+}
+
+    .MainMenuItem:hover
+    {
+        background-image: url(frame/menu_main2.png);
+        color: #000000;
+        font-weight: bold;
+    }
+
+.MainMenuArea
+{
+}
+
+.SubMenuItem
+{
+    background-image: url(frame/menu_sub1.png);
+    height: 45px;
+    cursor: pointer;
+    color: black;
+    font-family: 微软雅黑;
+}
+
+    .SubMenuItem:hover
+    {
+        background-image: url(frame/menu_sub2.png);
+        /*height: 30px;*/
+        /*cursor:pointer;*/
+        color: blue;
+    font-family: 微软雅黑;
+    }
+
+.SubMenuItemSelected
+{
+    background-image: url(frame/menu_sub3.png);
+    height: 45px;
+    color: #ffffff;
+    font-family: 微软雅黑;
+}
+
+.NavBar
+{
+    margin: 0px;
+    padding: 0px;
+    background-position: bottom;
+    background-image: url(frame/nav_back.jpg);
+    background-repeat: repeat-x;
+}
+
+#divNavigatorHead
+{
+    width: 96px;
+    height: 39px;
+    text-align: right;
+    background-position: left top;
+    background-image: url(frame/nav_icon.jpg);
+    background-repeat: no-repeat;
+}
+
+#divNavigator
+{
+    width: 820px;
+    filter: Alpha(Opacity='90',FinishOpacity='90',Style='1');
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 新宋体;
+}
+
+.MainContent
+{
+    padding: 5px 25px 0px 25px;
+    /*background-image: url(frame/spliter.png);
+    background-repeat: repeat-y;*/
+    background-color: White;
+    vertical-align: top;
+}
+
+.MainFooter
+{
+    background-image: url(frame/footer.png);
+    height: 40px;
+    vertical-align: top;
+    text-align: center;
+}
+
+.border1
+{
+    background-image: url(border/border1.gif);
+    width: 14px;
+    height: 13px;
+}
+
+.border2
+{
+    background-image: url(border/border2.gif);
+    height: 13px;
+}
+
+.border3
+{
+    background-image: url(border/border3.gif);
+    width: 14px;
+    height: 13px;
+}
+
+.border4
+{
+    background-image: url(border/border4.gif);
+    width: 14px;
+    height: 24px;
+}
+
+.border5
+{
+    background-image: url(border/border5.gif);
+    height: 24px;
+}
+
+.border6
+{
+    background-image: url(border/border6.gif);
+    width: 14px;
+    height: 24px;
+}
+
+.border7
+{
+    background-image: url(border/border7.gif);
+    width: 14px;
+    height: 14px;
+}
+
+.border8
+{
+    background-image: url(border/border8.gif);
+    height: 14px;
+}
+
+.border9
+{
+    background-image: url(border/border9.gif);
+    width: 14px;
+    height: 14px;
+}
+
+.border10
+{
+    background-image: url(border/border10.gif);
+    width: 14px;
+}
+
+.border11
+{
+    background-image: url(border/border11.gif);
+}
+
+.border12
+{
+    background-image: url(border/border12.gif);
+    width: 14px;
+}
+
+.border13
+{
+    background-image: url(border/border13.gif);
+    width: 14px;
+    height: 14px;
+}
+
+.border14
+{
+    background-image: url(border/border14.gif);
+    height: 14px;
+}
+
+.border15
+{
+    background-image: url(border/border15.gif);
+    width: 14px;
+    height: 14px;
+}
+
+.msgtable
+{
+    border-right: #eeeeee 1px solid;
+    border-top: #ffffff 1px solid;
+    border-left: #ffffff 1px solid;
+    border-bottom: #eeeeee 1px solid;
+    width: 224px;
+    border-collapse: collapse;
+}
+
+.msgtitle
+{
+    font-weight: bold;
+    font-size: x-small;
+    background-image: url(message/msgtitle.gif);
+    color: royalblue;
+    height: 26px;
+    border-collapse: collapse;
+}
+
+.msgbutton
+{
+    background-position: center center;
+    margin-top: 1px;
+    background-image: url(message/msgclose.gif);
+    width: 16px;
+    cursor: pointer;
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    height: 16px;
+    background-color: transparent;
+    border-bottom-style: none;
+}
+
+.msgcontent
+{
+    padding-right: 4px;
+    padding-left: 4px;
+    font-size: x-small;
+    background-image: url(message/msgcontent.gif);
+    padding-bottom: 4px;
+    padding-top: 4px;
+    height: 122px;
+}
+
+.MT_MouseOut
+{
+    width: 42px;
+    height: 26px;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    color: black;
+    font-size: large;
+}
+
+    .MT_MouseOut:hover
+    {
+        color: #FFFFFF;
+    }

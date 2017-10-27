@@ -1,0 +1,96 @@
+时间：2017/10/10 8:58:38
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/10 9:00:28
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/10 9:01:07
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/10 9:23:01
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/10 9:37:22
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/10 10:18:03
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/10 11:17:40
+详细信息：
+Error Caught in Application_Error event
+Error Message:未将对象引用设置到对象的实例。
+Stack Trace:   在 login.Page_Load(Object sender, EventArgs e) 位置 d:\Projects\Project\Pro.Web\Pro.Web.EA\login.aspx.cs:行号 13
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+-----------------------------
+时间：2017/10/10 11:18:06
+详细信息：
+Error Caught in Application_Error event
+Error Message:未将对象引用设置到对象的实例。
+Stack Trace:   在 login.Page_Load(Object sender, EventArgs e) 位置 d:\Projects\Project\Pro.Web\Pro.Web.EA\login.aspx.cs:行号 13
+   在 System.Web.Util.CalliEventHandlerDelegateProxy.Callback(Object sender, EventArgs e)
+   在 System.Web.UI.Control.OnLoad(EventArgs e)
+   在 System.Web.UI.Control.LoadRecursive()
+   在 System.Web.UI.Page.ProcessRequestMain(Boolean includeStagesBeforeAsyncPoint, Boolean includeStagesAfterAsyncPoint)
+-----------------------------
+时间：2017/10/10 11:20:43
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/10 11:20:53
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/10 11:21:06
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/10 11:21:07
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/10 11:22:52
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/10 11:23:24
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/10 11:36:04
+详细信息：
+Application end.
+-----------------------------
+时间：2017/10/10 11:36:06
+详细信息：
+Application start......
+-----------------------------
+时间：2017/10/10 11:37:55
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/10 11:38:52
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/10 11:45:27
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/10 11:45:59
+详细信息：
+WebService:Logout 返回结果非xml格式
+-----------------------------
+时间：2017/10/10 13:53:10
+详细信息：
+Application end.
+-----------------------------

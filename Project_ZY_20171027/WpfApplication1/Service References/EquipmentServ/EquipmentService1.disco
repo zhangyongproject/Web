@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://111.121.195.235:5000/Server/EquipmentService.asmx?wsdl" docRef="http://111.121.195.235:5000/Server/EquipmentService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://111.121.195.235:5000/Server/EquipmentService.asmx" xmlns:q1="http://yixiubox.com:5000/" binding="q1:EquipmentServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://111.121.195.235:5000/Server/EquipmentService.asmx" xmlns:q2="http://yixiubox.com:5000/" binding="q2:EquipmentServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
