@@ -16,7 +16,7 @@
       <publishTime>09/23/2017 23:24:22</publishTime>
     </File>
     <File Include="bin/EquActiveWebService.dll">
-      <publishTime>10/26/2017 21:04:16</publishTime>
+      <publishTime>10/28/2017 09:10:09</publishTime>
     </File>
     <File Include="bin/ICSharpCode.SharpZipLib.dll">
       <publishTime>03/09/2015 13:51:58</publishTime>
@@ -28,16 +28,16 @@
       <publishTime>03/09/2015 13:51:58</publishTime>
     </File>
     <File Include="bin/Pro.Base.dll">
-      <publishTime>10/26/2017 20:30:58</publishTime>
+      <publishTime>10/28/2017 09:10:08</publishTime>
     </File>
     <File Include="bin/Pro.EABase.dll">
-      <publishTime>10/26/2017 20:30:58</publishTime>
+      <publishTime>10/28/2017 09:10:08</publishTime>
     </File>
     <File Include="bin/Pro.Web.Base.dll">
-      <publishTime>10/26/2017 20:30:58</publishTime>
+      <publishTime>10/28/2017 09:10:08</publishTime>
     </File>
     <File Include="bin/Pro.Web.EALogic.dll">
-      <publishTime>10/26/2017 21:04:15</publishTime>
+      <publishTime>10/28/2017 09:10:09</publishTime>
     </File>
     <File Include="bin/System.Data.SQLite.dll">
       <publishTime>09/22/2017 15:57:34</publishTime>
