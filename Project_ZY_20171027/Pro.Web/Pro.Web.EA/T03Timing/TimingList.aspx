@@ -25,7 +25,7 @@
             SetSelOption($("sltequipment"), mXml.selectSingleNode("xml/equipments"));
 
             var date = new Date();
-            $('txtexpbegintime').value = date.format("yyyy-MM-dd");
+            $('txtexpbegintime').value = date.addMonth(-12).format("yyyy-MM-dd");
             $('txtexpendtime').value = date.addMonth(12).format("yyyy-MM-dd");
 
             GetList();
