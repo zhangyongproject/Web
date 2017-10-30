@@ -74,13 +74,6 @@ public partial class T02Equipment_EquipmentList : BasePage
         ReturnValue retVal = equLogic.Delete(info);
         if (retVal.IsSuccess == false) { return MyXml.CreateTabledResultXml(new DataTable(), 0, 10, 0).InnerXml; }
 
-        EquipmentActivationInfo infoea = new EquipmentActivationInfo()
-        {
-            EIID = Tools.GetInt32((dic.ContainsKey("eiid") ? dic["eiid"] : "-1"), -1)
-        };
-        ReturnValue retVal1 = equLogic.DeleteActiveEquipment(infoea);
-        if (retVal1.IsSuccess == false) { return MyXml.CreateTabledResultXml(new DataTable(), 0, 10, 0).InnerXml; }
-
         return MyXml.CreateResultXml(retVal.RetCode, retVal.RetMsg, string.Empty).InnerXml;
     }
 

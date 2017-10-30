@@ -13,7 +13,6 @@ using Pro.EABase;
 
 public partial class T02Equipment_UserEquipmentGrantList : BasePage
 {
-    private EquipmentInfoLogic equLogic = new EquipmentInfoLogic();
     private UserEquipmentGrantLogic uegLogic = new UserEquipmentGrantLogic();
 
     protected void Page_Load(object sender, EventArgs e)

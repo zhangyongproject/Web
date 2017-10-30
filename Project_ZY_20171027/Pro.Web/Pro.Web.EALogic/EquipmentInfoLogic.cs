@@ -248,7 +248,18 @@ namespace Pro.Web.EALogic
             DataTable dt = retVal.RetDt;
             DataRow[] drs = dt.Select(string.Format("einame='{0}' or eiid={1}", info.EIName, info.EIID), "eiid asc");
             if (drs.Length == 0) { return new ReturnValue(false, -2); } //不存在该设备
-            return eiDAL.Delete(info);
+            retVal = eiDAL.Delete(info);
+
+            //删除设备激活表中的设备相关条目
+            EquipmentActivationInfo infoea = new EquipmentActivationInfo() { EIID = info.EIID };
+            ReturnValue retVal1 = DeleteActiveEquipment(infoea);
+            //if (retVal1.IsSuccess == false) { return new ReturnValue(false, -1); }
+
+            //删除用户授权表中的设备相关条目
+            ReturnValue retValUE = uegDAL.Delete(new UserEquipmentGrantInfo() { EIID = info.EIID });
+            //if (retValUE.IsSuccess == false) { return new ReturnValue(false, -9, Consts.EXP_Info); }
+
+            return retVal;
         }
 
         /// <summary>
