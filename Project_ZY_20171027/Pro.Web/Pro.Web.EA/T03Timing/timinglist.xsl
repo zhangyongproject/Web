@@ -11,9 +11,9 @@
       <table class="gd">
         <xsl:attribute name="id">table_timinglist</xsl:attribute>
         <tr class="gd_hdtr" >
-          <!--<th style="width:50px">
-            <input id="chk_all" type="checkbox" name="chk_all" onclick="SelectChecks('chk_item',this.checked);"></input>
-          </th>-->
+          <th style="width:50px">
+            <input id="chk_all" type="checkbox" name="chk_all" onclick="SelectChecks('chk_item',this.checked);checkItem();"></input>
+          </th>
           <th style="">
             用户名
           </th>
@@ -52,10 +52,11 @@
                     <xsl:attribute name="class">gd_alt</xsl:attribute>
                   </xsl:otherwise>
                 </xsl:choose>
-                <!--<td align="center">
+                <td align="center">
                   <input type="checkbox" name="chk_item"><xsl:attribute name="value"><xsl:value-of select="TSRID"/></xsl:attribute>
+                    <xsl:attribute name="onclick">checkItem()</xsl:attribute>
                   </input>
-                </td>-->
+                </td>
                 <td align="center">
                   <xsl:value-of select="USERNAME"/>                 
                 </td>

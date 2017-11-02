@@ -216,8 +216,8 @@ namespace Pro.EABase
             { sql += string.Format(" ,startdate = datetime('{0}')", info.StartDate.ToString("yyyy-MM-dd HH:mm:ss")); }
             if (info.EndDate < DateTime.MaxValue)
             { sql += string.Format(" ,enddate = datetime('{0}')", info.EndDate.ToString("yyyy-MM-dd HH:mm:ss")); }
-            if (info.Description.Trim().Length > 0)
-                sql += string.Format(" where uegid in ({0})", ids);
+
+            sql += string.Format(" where uegid in ({0})", ids);
             int result = SQLiteHelper.ExecuteNonQuery(sql, null);
 
             retVal.IsSuccess = result > 0;

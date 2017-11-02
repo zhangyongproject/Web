@@ -55,7 +55,7 @@
 
         function AddorEdit() { 
             if ($j("#txtpackname").val().trim().length == 0) { alert("包名称必须输入。"); return; }
-            else if ($j("#txtpackname").val().length2() > 30) { alert("包名称输入内容超出限制。"); return; }
+            else if ($j("#txtpackname").val().length2() > 100) { alert("包名称输入内容超出限制。"); return; }
             else if ($j("#txtexpbegintime").val().trim().length == 0) { alert("有效期限开始时间必须输入。"); return; }
             else if ($j("#txtexpendtime").val().trim().length == 0) { alert("有效期限结束时间必须输入。"); return; }
             else if ($j("#txtbegintime").val().trim().length == 0) { alert("运行开始时间必须输入。"); return; }
@@ -128,10 +128,10 @@
             <td class="tit" style="text-align: center;">包名称
             </td>
             <td colspan=3>
-                <input type="text" id="txtpackname" style="width:100%;" maxlength="30" />
+                <input type="text" id="txtpackname" style="width:100%;" maxlength="100" />
             </td>
             <td>
-                <label style="color: gray">(1～30，中文占2个)</label>
+                <label style="color: gray">(1～100，中文占2个)</label>
 
             </td>
         </tr>

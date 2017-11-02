@@ -114,4 +114,13 @@ public partial class T03Timing_TimingList : BasePage
         ReturnValue retVal = tsrLogic.Delete(info);
         return MyXml.CreateResultXml(retVal.RetCode, retVal.RetMsg, string.Empty).InnerXml;
     }
+
+    public string ReleaseIds(string strparam)
+    {
+        Dictionary<string, string> dic = MyJson.JsonToDictionary(strparam);
+        //tsrid ==-1 添加 否则 修改
+        ReturnValue retVal = tsrLogic.ReleaseIds((dic.ContainsKey("tsrid") ? dic["tsrid"] : "-1"));
+        return MyXml.CreateResultXml(retVal.RetCode, retVal.RetMsg, string.Empty).InnerXml;
+    }
+
 }

@@ -158,7 +158,7 @@ namespace WpfApplication1
         private void GetTimingList()
         {
             var     client  = new TimingServ.TimingServiceSoapClient();
-            string  strjson = client.GetTimingList(MakeGetTimingListParameter("bbbbbb"));
+            string  strjson = client.GetTimingList(MakeGetTimingListParameter("device0"));
 
             JObject jo      = (JObject)JsonConvert.DeserializeObject(strjson);
             JArray  ja      = (JArray)jo["data"];
@@ -169,8 +169,8 @@ namespace WpfApplication1
             //Logion();
             //GetEquipmentInfo();
             //ActiveEquipment();
-            UpdateEquipmentIPList();
-            //GetTimingList();
+            //UpdateEquipmentIPList();
+            GetTimingList();
         }
 
 

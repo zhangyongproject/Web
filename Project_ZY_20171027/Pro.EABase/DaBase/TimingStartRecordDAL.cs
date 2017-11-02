@@ -147,5 +147,27 @@ namespace Pro.EABase
             return retVal;
         }
 
+        /// <summary>
+        /// 批量发布记录
+        /// </summary>
+        /// <param name="info">记录ID支持逗号分隔多个</param>
+        /// <returns></returns>
+        public ReturnValue ReleaseIds(string ids)
+        {
+            if (string.IsNullOrEmpty(ids)) { return new ReturnValue(false, -2, "修改对象ID列表为空。"); }
+            ReturnValue retVal = new ReturnValue(false, 0, string.Empty);
+            string sql = string.Format(@"update timingstartrecord set tsrid = tsrid ");
+
+            { sql += string.Format(" ,release = {0}", 0); }
+
+            sql += string.Format(" where tsrid in ({0})", ids);
+            int result = SQLiteHelper.ExecuteNonQuery(sql, null);
+
+            retVal.IsSuccess = result > 0;
+            retVal.OutCount = result;
+            retVal.RetCode = retVal.IsSuccess ? 1 : -1;
+            retVal.RetMsg = retVal.IsSuccess ? "成功" : "失败";
+            return retVal;
+        }
     }
 }

@@ -58,5 +58,16 @@ namespace Pro.Web.EALogic
         {
             return tsrDAL.Delete(info);
         }
+
+        /// <summary>
+        /// 批量发布记录
+        /// </summary>
+        /// <param name="info">记录ID支持逗号分隔多个</param>
+        /// <returns></returns>
+        public ReturnValue ReleaseIds(string ids)
+        {
+            if (string.IsNullOrEmpty(ids)) { return new ReturnValue(false, -2, "修改对象ID列表为空。"); }
+            return tsrDAL.ReleaseIds(ids);
+        }
     }
 }
