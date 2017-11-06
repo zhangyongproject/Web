@@ -37,6 +37,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DotRas, Version=1.2.4168.40391, Culture=neutral, PublicKeyToken=b378f04384b7892a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DotRas.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json.Net20">
       <HintPath>..\Pro.Web\Pro.Web.Base\bin\Debug\Newtonsoft.Json.Net20.dll</HintPath>
     </Reference>
@@ -62,6 +66,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Common.cs" />
     <Compile Include="Json\JsonHelper.cs" />
     <Compile Include="Service References\AccessServ\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -152,7 +157,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

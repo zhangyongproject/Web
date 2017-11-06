@@ -126,7 +126,8 @@ namespace Pro.EABase
             "select ueg.[uegid],ueg.[userid],ueg.[eiid]," +
             "u.[usernick],u.[mobilephone]," +
             "e.[einame],e.[einumber],e.[iplist], " +
-            "ueg.[startdate] " +
+            "ueg.[startdate], " +
+            "ueg.[enddate] " +
             "from user u,equipmentinfo e,userequipmentgrant ueg " +
             "where u.[userid]= ueg.[userid] and e.[eiid] = ueg.[eiid] ";
 
@@ -201,6 +202,22 @@ namespace Pro.EABase
             return retVal;
         }
 
+        /// <summary>
+        /// 删除用户授权记录按照eiid
+        /// </summary>
+        /// <param name="info">记录ID支持逗号分隔多个</param>
+        /// <returns></returns>
+        public ReturnValue Delete4IdsByEiid(string ids)
+        {
+            ReturnValue retVal = new ReturnValue(false, 0, string.Empty);
+            string sql = "delete from userequipmentgrant where eiid in ({0})";
+            int result = SQLiteHelper.ExecuteNonQuery(string.Format(sql, ids));
+            retVal.OutCount = result;   //由于是多个记录，影响行数将可能大于1。
+            retVal.RetCode = result > 0 ? 1 : 0;
+            retVal.IsSuccess = result > 0;
+            retVal.RetMsg = retVal.IsSuccess ? "成功" : "失败";
+            return retVal;
+        }
         /// <summary>
         /// 批量修改时间
         /// </summary>

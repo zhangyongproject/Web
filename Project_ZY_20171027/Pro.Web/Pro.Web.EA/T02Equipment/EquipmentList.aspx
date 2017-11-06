@@ -32,6 +32,7 @@
                 if (userType == "0") { return; }
                 $j("#table_equipmentlist a").css("display", "none");
                 $j("#btnAdd").css("display", "none");
+                $j("#btnDel").css("display", "none");
             }, 500);
         }
 
@@ -77,6 +78,36 @@
                 });
             });
         }
+
+        //批量删除、批量修改时间，按钮状态判断
+        function checkItem() {
+            $j("#btnDel").attr("disabled", $j("input[type='checkbox'][name='chk_item']:checked").size() == 0);
+        }
+
+        function SltDel() {
+            ShowConfirm("是否要删除该记录？", "", function (code, value) {
+                if (code != 0) return;
+                eiids = "";
+                $j("input[type='checkbox'][name='chk_item']:checked").each(function (idx) {
+                    eiids += this.value + ",";
+                });
+                var wm = new WebMethodProxy(document.location, "Delete4Ids");
+                wm.AddParam("strparam", "{\"eiid\":\"" + eiids.substr(0, eiids.length - 1) + "\"}");
+                wm.Call(function (ret) {
+                    if (ret == undefined) { return; }
+                    var xmlDoc = CreateXmlFromString(ret);
+                    var rootNode = xmlDoc.selectSingleNode("xml");
+                    var code = rootNode.getAttribute("code");
+                    if (code == "1") {
+                        ShowAlert("共选择" + eiids.split(",").length + "条记录，已成功删除" + rootNode.getAttribute("value") + "条。");
+                        GetList();
+                    }
+                    else {
+                        window.alert(rootNode.getAttribute("msg"));
+                    }
+                });
+            });
+        }
     </script>
 
 </asp:Content>
@@ -88,6 +119,7 @@
             <td>
                 <input type="button" class="input_btn" id="btnSreach" value="查询" onclick="GetList()" btnicon="btnIcon01.png" />
                 <input type="button" class="input_btn" id="btnAdd" value="添加" onclick="AddEquipment()" btnicon="btnIcon03.png" />
+                <input type="button" class="input_btn" id="btnDel" value="批量删除" disabled="disabled" onclick="SltDel()" btnicon="item.png" />
             </td>
             <td align="right" valign="bottom">
                 <img id="IconQueryInfo" style="visibility: hidden;" />

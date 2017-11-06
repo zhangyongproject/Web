@@ -261,7 +261,23 @@ namespace Pro.Web.EALogic
 
             return retVal;
         }
+		
+        /// <summary>
+        /// 批量删除设备记录
+        /// </summary>
+        /// <param name="info">用户ID支持逗号分隔多个</param>
+        /// <returns></returns>
+        public ReturnValue Delete4Ids(string ids)
+        {
+            ReturnValue retVal = eiDAL.Delete4Ids(ids);
+            if (!retVal.IsSuccess) { return new ReturnValue(false, -9, Consts.EXP_Info); }   //执行失败
 
+            uegDAL.Delete4IdsByEiid(ids);
+            eaDAL.Delete4IdsByEiid(ids);
+
+            return retVal;
+        }
+		
         /// <summary>
         /// 删除激活设备表中设备
         /// </summary>

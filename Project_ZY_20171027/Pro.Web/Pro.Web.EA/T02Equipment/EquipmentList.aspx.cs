@@ -77,5 +77,15 @@ public partial class T02Equipment_EquipmentList : BasePage
         return MyXml.CreateResultXml(retVal.RetCode, retVal.RetMsg, string.Empty).InnerXml;
     }
 
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="strparam"></param>
+    /// <returns></returns>
+    public string Delete4Ids(string strparam)
+    {
+        Dictionary<string, string> dic = MyJson.JsonToDictionary(strparam);
+        ReturnValue retVal = equLogic.Delete4Ids((dic.ContainsKey("eiid") ? dic["eiid"] : "-1"));
+        return MyXml.CreateResultXml(retVal.RetCode, retVal.RetMsg, retVal.OutCount.ToString()).InnerXml;
+    }
 }
