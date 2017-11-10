@@ -129,7 +129,7 @@ namespace WpfApplication1
         private void UpdateEquipmentIPList()
         {
             var     client  = new EquipmentServ.EquipmentServiceSoapClient();
-            string  strjson = client.UpdateIPList(MakeEquipmentIPListParameter("aaaaaa", "1111"));
+            string strjson = client.UpdateIPList(MakeEquipmentIPListParameter("XYKf001", "192.168.1.105,127.0.0.1"));
 
             JObject jo      = (JObject)JsonConvert.DeserializeObject(strjson);
             JArray  ja      = (JArray)jo["data"];
@@ -195,8 +195,8 @@ namespace WpfApplication1
             //Logion();
             //GetEquipmentInfo();
             //ActiveEquipment();
-            //UpdateEquipmentIPList();
-            GetTimingList();
+            UpdateEquipmentIPList();
+            //GetTimingList();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
