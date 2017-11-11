@@ -141,7 +141,7 @@
             <td colspan="2" class="MainFooter">
                 <table border="0" width="100%">
                     <tr height="40">
-                        <td align="center" style="color: #808080">版权所有 &copy; 2017-2018 <a style="color: #8080FF" href="http://www.baidu.com" target="_blank">深圳市XXX技术有限公司</a>
+                        <td align="center" style="color: #808080">版权所有 &copy; 2017-2018 <a style="color: #8080FF" href="http://www.baidu.com" target="_blank"><%--深圳市XXX技术有限公司--%></a>
                         </td>
                     </tr>
                 </table>
