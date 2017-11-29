@@ -29,6 +29,10 @@ public partial class T03Timing_TimingList : BasePage
     /// <returns></returns>
     protected override XmlDocument CreateInitInfo()
     {
+        //删除过期设备
+        ReturnValue retVal = uegLogic.DeleteExpire(new UserEquipmentGrantInfo() { EndDate = DateTime.Now });
+        //if (retVal.IsSuccess == false) { return MyXml.CreateResultXml(-1, "删除过期授权设备时异常", string.Empty); }
+
         XmlDocument xmlDoc = MyXml.CreateResultXml(1, string.Empty, string.Empty);
         XmlNode rootNode = xmlDoc.SelectSingleNode("xml");
 
@@ -37,26 +41,43 @@ public partial class T03Timing_TimingList : BasePage
         XmlNode grantequipmentsNode = MyXml.AddXmlNode(rootNode, "grantequipments");
         XmlNode notgrantequipmentsNode = MyXml.AddXmlNode(rootNode, "notgrantequipments");
         //用户对象
-        ReturnValue retVal = userLogic.GetUser(new UserInfo() { UserID = -1 });
+        retVal = userLogic.GetUser(new UserInfo() { UserID = -1 });
         if (retVal.IsSuccess == false) { return MyXml.CreateResultXml(-1, "加载用户时异常", string.Empty); }
+        {//排序
+            DataView dv     = retVal.RetDt.DefaultView;
+            dv.Sort         = "username";
+            retVal.RetDt    = dv.ToTable();
+        }
         foreach (DataRow dr in retVal.RetDt.Rows)
         {
             XmlNode itemNode = MyXml.AddXmlNode(userNode, "item");
             MyXml.AddAttribute(itemNode, "key", dr["userid"]);
             MyXml.AddAttribute(itemNode, "name", string.Format("{0}【{1}】", dr["username"], dr["usernick"]));
         }
+
         //设备对象
         retVal = equLogic.GetEquipment(new EquipmentInfo() { EIID = -1 });
         if (retVal.IsSuccess == false) { return MyXml.CreateResultXml(-1, "加载设备时异常", string.Empty); }
+        {//排序
+            DataView dv     = retVal.RetDt.DefaultView;
+            dv.Sort         = "einame";
+            retVal.RetDt    = dv.ToTable();
+        }
         foreach (DataRow dr in retVal.RetDt.Rows)
         {
             XmlNode itemNode = MyXml.AddXmlNode(equipmentsNode, "item");
             MyXml.AddAttribute(itemNode, "key", dr["eiid"]);
             MyXml.AddAttribute(itemNode, "name", dr["einame"]);
         }
+
         //未授权设备对象 
         retVal = equLogic.GetNotGrantEquipment(new EquipmentInfo() { EIID = -1 });
         if (retVal.IsSuccess == false) { return MyXml.CreateResultXml(-1, "加载未授权设备时异常", string.Empty); }
+        {//排序
+            DataView dv     = retVal.RetDt.DefaultView;
+            dv.Sort         = "einame";
+            retVal.RetDt    = dv.ToTable();
+        }
         foreach (DataRow dr in retVal.RetDt.Rows)
         {
             XmlNode itemNode = MyXml.AddXmlNode(notgrantequipmentsNode, "item");
@@ -67,6 +88,11 @@ public partial class T03Timing_TimingList : BasePage
         //昂前登录用户授权设备对象
         retVal = uegLogic.GetUserEquGrant(new UserEquipmentGrantInfo() { UserID = Tools.GetInt32(IPApi.UserID, int.MaxValue) });
         if (retVal.IsSuccess == false) { return MyXml.CreateResultXml(-1, "加载未授权设备时异常", string.Empty); }
+        {//排序
+            DataView dv     = retVal.RetDt.DefaultView;
+            dv.Sort         = "einame";
+            retVal.RetDt    = dv.ToTable();
+        }
         foreach (DataRow dr in retVal.RetDt.Rows)
         {
             XmlNode itemNode = MyXml.AddXmlNode(grantequipmentsNode, "item");

@@ -83,11 +83,11 @@ namespace Pro.EABase
             }
             if (info.StartDate > DateTime.MinValue)
             {
-                sql += string.Format(" and enddate >= datetime('{0}')", info.StartDate.ToString("yyyy-MM-dd HH:mm:ss"));
+                sql += string.Format(" and startdate >= datetime('{0}')", info.StartDate.ToString("yyyy-MM-dd HH:mm:ss"));
             }
-            if (info.StartDate < DateTime.MaxValue)
+            if (info.EndDate < DateTime.MaxValue)
             {
-                sql += string.Format(" and startdate <= datetime('{0}')", info.EndDate.ToString("yyyy-MM-dd HH:mm:ss"));
+                sql += string.Format(" and enddate <= datetime('{0}')", info.EndDate.ToString("yyyy-MM-dd HH:mm:ss"));
             }
             if (info.UEGID > -1)
             {
@@ -143,13 +143,13 @@ namespace Pro.EABase
             {
                 sql += string.Format(" and einame like '%{0}%'", info.EIName);
             }
-            if (info.StartDate > DateTime.MinValue)
+            //if (info.StartDate > DateTime.MinValue)
             {
-                sql += string.Format(" and enddate >= datetime('{0}')", info.StartDate.ToString("yyyy-MM-dd HH:mm:ss"));
+                sql += string.Format(" and startdate <= datetime('{0}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             }
-            if (info.EndDate < DateTime.MaxValue)
+            //if (info.EndDate < DateTime.MaxValue)
             {
-                sql += string.Format(" and startdate <= datetime('{0}')", info.EndDate.ToString("yyyy-MM-dd HH:mm:ss"));
+                sql += string.Format(" and enddate >= datetime('{0}')", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             }
             if (info.UEGID > -1)
             {
@@ -178,6 +178,23 @@ namespace Pro.EABase
             ReturnValue retVal = new ReturnValue(false, 0, string.Empty);
             string sql = "delete from userequipmentgrant where userid = {0} or  eiid = {1} or uegid = {2}";
             int result = SQLiteHelper.ExecuteNonQuery(string.Format(sql, info.UserID, info.EIID, info.UEGID));
+            retVal.OutCount = result;   //由于是多个记录，影响行数将可能大于1。
+            retVal.RetCode = result > 0 ? 1 : 0;
+            retVal.IsSuccess = result > 0;
+            retVal.RetMsg = retVal.IsSuccess ? "成功" : "失败";
+            return retVal;
+        }
+
+        /// <summary>
+        /// 删除用户授权过期记录
+        /// </summary>
+        /// <param name="info">UserId/EIID/UEGID</param>
+        /// <returns></returns>
+        public ReturnValue DeleteExpire(UserEquipmentGrantInfo info)
+        {
+            ReturnValue retVal = new ReturnValue(false, 0, string.Empty);
+            string sql = "delete from userequipmentgrant where enddate <= datetime('{0}')";
+            int result = SQLiteHelper.ExecuteNonQuery(string.Format(sql, info.EndDate.ToString("yyyy-MM-dd HH:mm:ss")));
             retVal.OutCount = result;   //由于是多个记录，影响行数将可能大于1。
             retVal.RetCode = result > 0 ? 1 : 0;
             retVal.IsSuccess = result > 0;

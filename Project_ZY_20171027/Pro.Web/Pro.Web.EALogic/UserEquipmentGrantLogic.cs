@@ -55,6 +55,16 @@ namespace Pro.Web.EALogic
         }
 
         /// <summary>
+        /// 删除用户设备授权过期记录
+        /// </summary>
+        /// <param name="info">UserId/UEGID/EIID</param>
+        /// <returns></returns>
+        public ReturnValue DeleteExpire(UserEquipmentGrantInfo info)
+        {
+            return uegDAL.DeleteExpire(info);
+        }
+
+        /// <summary>
         /// 删除用户授权记录
         /// </summary>
         /// <param name="info">用户ID支持逗号分隔多个</param>

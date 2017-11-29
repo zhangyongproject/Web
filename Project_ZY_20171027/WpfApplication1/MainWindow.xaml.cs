@@ -53,7 +53,7 @@ namespace WpfApplication1
         {
             var     client  = new AccessServ.AccessServiceSoapClient();
 
-            string  strjson = client.Login(MakeLogionParameter("admin", "admin"));
+            string  strjson = client.Login(MakeLogionParameter("test", "test"));
             JObject jo      = (JObject)JsonConvert.DeserializeObject(strjson);
             JArray  ja      = (JArray)jo["data"];
         }
@@ -192,10 +192,10 @@ namespace WpfApplication1
             //    }
             //}
 
-            //Logion();
+            Logion();
             //GetEquipmentInfo();
             //ActiveEquipment();
-            UpdateEquipmentIPList();
+            //UpdateEquipmentIPList();
             //GetTimingList();
         }
 

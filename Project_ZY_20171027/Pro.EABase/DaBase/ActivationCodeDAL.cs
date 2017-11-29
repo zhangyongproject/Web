@@ -76,11 +76,11 @@ namespace Pro.EABase
             }
             if (info.StartDate > DateTime.MinValue)
             {
-                sql += string.Format(" and enddate >= datetime('{0}')", info.StartDate.ToString("yyyy-MM-dd HH:mm:ss"));
+                sql += string.Format(" and startdate >= datetime('{0}')", info.StartDate.ToString("yyyy-MM-dd HH:mm:ss"));
             }
             if (info.EndDate < DateTime.MaxValue)
             {
-                sql += string.Format(" and startdate <= datetime('{0}')", info.EndDate.ToString("yyyy-MM-dd HH:mm:ss"));
+                sql += string.Format(" and enddate <= datetime('{0}')", info.EndDate.ToString("yyyy-MM-dd HH:mm:ss"));
             }
             if (info.Status > -1)
             {

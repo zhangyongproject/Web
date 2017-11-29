@@ -23,9 +23,9 @@
             SetSelOption($("sltuser"), mXml.selectSingleNode("xml/users"));
             SetSelOption($("sltequipment"), mXml.selectSingleNode("xml/equipments"));
 
-            var date = new Date();
-            $('txtbegintime').value = date.format("yyyy-MM-dd");
-            $('txtendtime').value = date.addMonth(12).format("yyyy-MM-dd");
+            //var date = new Date();
+            //$('txtbegintime').value = date.addMonth(-12).format("yyyy-MM-dd");
+            //$('txtendtime').value = date.addMonth(12).format("yyyy-MM-dd");
 
             GetList();
 
@@ -35,8 +35,8 @@
             hashtable = new Hashtable();
             hashtable.add('userid', $j("#sltuser").val());
             hashtable.add('eiid', $j("#sltequipment").val());
-            hashtable.add('begintime', $j("#txtbegintime").val());
-            hashtable.add('endtime', $j("#txtendtime").val());
+            //hashtable.add('begintime', $j("#txtbegintime").val());
+            //hashtable.add('endtime', $j("#txtendtime").val());
             objDataClient._PageIndex = 1;
             objDataClient.Query(hashtable.toJson());
 
@@ -198,12 +198,12 @@
                     <select id="sltequipment" style="width: 150px">
                         <option value=""></option>
                     </select></td>
-                <td class="tit">有效时间</td>
-                <td style="width: 40%">
+                <td class="tit"><%--有效时间--%>  </td>
+<%--                <td style="width: 40%">
                     <input type="text" id="txtbegintime" onfocus=" WdatePicker({ dateFmt: 'yyyy-MM-dd', onpicked: function () { $('txtendtime').focus(); }, maxDate: '#F{$dp.$D(\'txtendtime\')}' })" class="Wdate" style="width: 130px;" />
                     -
                     <input type="text" id="txtendtime" onfocus="WdatePicker({ dateFmt: 'yyyy-MM-dd', minDate: '#F{$dp.$D(\'txtbegintime\')}' })" class="Wdate" style="width: 130px;" />
-                </td>
+                </td>--%>
 
             </tr>
         </table>

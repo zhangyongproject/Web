@@ -36,10 +36,12 @@ public partial class T02Equipment_UserEquipmentGrantDetail : BasePage
             UEGID = Tools.GetInt32((dic.ContainsKey("uegid") ? dic["uegid"] : "-1"), -1),
             UserName = dic.ContainsKey("username") ? dic["username"] : string.Empty,
             EIName = dic.ContainsKey("einame") ? dic["einame"] : string.Empty,
-            StartDate = Tools.GetDateTime(dic.ContainsKey("begintime") ? dic["begintime"] : string.Empty, DateTime.Now),
-            EndDate = Tools.GetDateTime(dic.ContainsKey("endtime") ? dic["endtime"] : string.Empty, DateTime.Now),
+            StartDate = Tools.GetDateTime(dic.ContainsKey("begintime") ? dic["begintime"] : string.Empty, DateTime.MinValue),
+            EndDate = Tools.GetDateTime(dic.ContainsKey("endtime") ? dic["endtime"] : string.Empty, DateTime.MaxValue),
             Description = dic.ContainsKey("description") ? dic["description"] : string.Empty
         };
+        info.StartDate = new DateTime(info.StartDate.Year, info.StartDate.Month, info.StartDate.Day, 0, 0, 0);
+        info.EndDate = new DateTime(info.EndDate.Year, info.EndDate.Month, info.EndDate.Day, 23, 59, 59);
         //uegid ==-1 添加 否则 修改
         ReturnValue retVal = info.UEGID == -1 ? uegLogic.Insert(info) : uegLogic.Update(info);
         return MyXml.CreateResultXml(retVal.RetCode, retVal.RetMsg, string.Empty).InnerXml;
@@ -61,17 +63,21 @@ public partial class T02Equipment_UserEquipmentGrantDetail : BasePage
             if (eiids[i].Trim().Length == 0) { continue; }
             try
             {
-                ReturnValue retVal = uegLogic.Insert(new UserEquipmentGrantInfo()
+                UserEquipmentGrantInfo info = new UserEquipmentGrantInfo()
                  {
                      UserID = Tools.GetInt32((dic.ContainsKey("userid") ? dic["userid"] : "-1"), -1),
                      EIID = Tools.GetInt32(eiids[i], -1),
                      UEGID = Tools.GetInt32((dic.ContainsKey("uegid") ? dic["uegid"] : "-1"), -1),
                      UserName = dic.ContainsKey("username") ? dic["username"] : string.Empty,
                      EIName = einames[i],
-                     StartDate = Tools.GetDateTime(dic.ContainsKey("begintime") ? dic["begintime"] : string.Empty, DateTime.Now),
-                     EndDate = Tools.GetDateTime(dic.ContainsKey("endtime") ? dic["endtime"] : string.Empty, DateTime.Now),
+                     StartDate = Tools.GetDateTime(dic.ContainsKey("begintime") ? dic["begintime"] : string.Empty, DateTime.MinValue),
+                     EndDate = Tools.GetDateTime(dic.ContainsKey("endtime") ? dic["endtime"] : string.Empty, DateTime.MaxValue),
                      Description = dic.ContainsKey("description") ? dic["description"] : string.Empty
-                 });
+                 };
+
+                info.StartDate = new DateTime(info.StartDate.Year, info.StartDate.Month, info.StartDate.Day, 0, 0, 0);
+                info.EndDate = new DateTime(info.EndDate.Year, info.EndDate.Month, info.EndDate.Day, 23, 59, 59);
+                ReturnValue retVal = uegLogic.Insert(info);
             }
             catch (Exception ex)
             {
