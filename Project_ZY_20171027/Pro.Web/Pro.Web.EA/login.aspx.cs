@@ -32,7 +32,7 @@ public partial class login : System.Web.UI.Page
         string str = "";
         if (AppInfo.GetSessionInfo(Session).Login(this.Txt_UserCode.Text, this.Txt_Password.Value, this.Context.Request.UserHostAddress, ref str))
         {
-            if (Session["LastPage"] != null)
+            if (Session["LastPage"] != null && !Session["LastPage"].ToString().Contains("Detail"))
                 Response.Redirect(Session["LastPage"].ToString());
             else
                 Response.Redirect(ConstDefaultPage);

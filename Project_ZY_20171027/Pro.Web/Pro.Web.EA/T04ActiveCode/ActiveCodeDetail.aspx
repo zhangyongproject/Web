@@ -80,12 +80,13 @@
         <tr>
             <td class="tit" style="text-align: center">激活码
             </td>
-            <td>
-                <input type="text" id="txtaccode" style="width: 180px" maxlength="30" />
-                <label id="lblaccode" style="width: 200px"></label>
+            <td colspan="3">
+                <input type="text" id="txtaccode" style="width:100%;" maxlength="30" />
+                <label id="lblaccode" style="width:100%;"></label>
             </td>
             <td>
-                <label style="color: gray">(1～30，数字或英文字母)</label></td>
+                <label style="color: gray; width:auto">(1～30,数字或英文字母)</label>
+            </td>
         </tr>
         <%--<tr>
             <td class="tit" style="text-align: center">有效期限
@@ -99,17 +100,18 @@
         <tr>
             <td class="tit" style="text-align: center">描述
             </td>
-            <td>
-                <textarea rows="10" cols="22" id="txtdesc">
+            <td colspan="3">
+                <textarea rows="10" cols="22" id="txtdesc" style="width:100%;">
 
                 </textarea>
             </td>
             <td>
-                <label style="color: gray">(0～200，中文占2个)</label></td>
-        </tr>
+                <label style="color: gray; width:auto">(0～200,中文占2个)</label>
 
+            </td>
+        </tr>
         <tr style="height: 40px; vertical-align: middle;">
-            <td align="center" colspan="4" style="margin-top: 10px;">
+            <td align="center" colspan="5" style="margin-top: 10px;">
                 <input type="button" id="Button1" class="input_btn" value=" 确定 " onclick="AddorEdit()" />
                 <input type="button" id="Button2" class="input_btn" value=" 取消 " onclick="callback(1, null);" />
             </td>

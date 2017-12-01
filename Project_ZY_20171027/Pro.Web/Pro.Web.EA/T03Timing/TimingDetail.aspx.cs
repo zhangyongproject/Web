@@ -66,23 +66,26 @@ public partial class T03Timing_TimingDetail : BasePage
             if (eiids[i].Trim().Length == 0) { continue; }
             try
             {
-                ReturnValue retVal = tsrLogic.Insert(new TiminGstartRecordInfo()
-                    {
-                        UserID = Tools.GetInt32((dic.ContainsKey("userid") ? dic["userid"] : "-1"), -1),
-                        EIID = Tools.GetInt32(eiids[i], -1),
-                        TSRID = Tools.GetInt32((dic.ContainsKey("tsrid") ? dic["tsrid"] : "-1"), -1),
-                        UserName = dic.ContainsKey("username") ? dic["username"] : string.Empty,
-                        EIName = einames[i],
-                        PackName = dic.ContainsKey("packname") ? dic["packname"] : string.Empty,
-                        StartDate = Tools.GetDateTime(dic.ContainsKey("begintime") ? dic["begintime"] : string.Empty, DateTime.Now),
-                        EndDate = Tools.GetDateTime(dic.ContainsKey("endtime") ? dic["endtime"] : string.Empty, DateTime.Now),
-                        ExpStartDate = Tools.GetDateTime(dic.ContainsKey("expbegintime") ? dic["expbegintime"] : string.Empty, DateTime.Now),
-                        ExpEndDate = Tools.GetDateTime(dic.ContainsKey("expendtime") ? dic["expendtime"] : string.Empty, DateTime.Now),
-                        Release = Tools.GetInt32((dic.ContainsKey("release") ? dic["release"] : "-1"), -1),
-                        Status = 0,
-                        Description = dic.ContainsKey("description") ? dic["description"] : string.Empty
-                    }
-               );
+                TiminGstartRecordInfo info = new TiminGstartRecordInfo()
+                {
+                    UserID = Tools.GetInt32((dic.ContainsKey("userid") ? dic["userid"] : "-1"), -1),
+                    EIID = Tools.GetInt32(eiids[i], -1),
+                    TSRID = Tools.GetInt32((dic.ContainsKey("tsrid") ? dic["tsrid"] : "-1"), -1),
+                    UserName = dic.ContainsKey("username") ? dic["username"] : string.Empty,
+                    EIName = einames[i],
+                    PackName = dic.ContainsKey("packname") ? dic["packname"] : string.Empty,
+                    StartDate = Tools.GetDateTime(dic.ContainsKey("begintime") ? dic["begintime"] : string.Empty, DateTime.Now),
+                    EndDate = Tools.GetDateTime(dic.ContainsKey("endtime") ? dic["endtime"] : string.Empty, DateTime.Now),
+                    ExpStartDate = Tools.GetDateTime(dic.ContainsKey("expbegintime") ? dic["expbegintime"] : string.Empty, DateTime.Now),
+                    ExpEndDate = Tools.GetDateTime(dic.ContainsKey("expendtime") ? dic["expendtime"] : string.Empty, DateTime.Now),
+                    Release = Tools.GetInt32((dic.ContainsKey("release") ? dic["release"] : "-1"), -1),
+                    Status = 0,
+                    Description = dic.ContainsKey("description") ? dic["description"] : string.Empty
+                };
+
+                info.ExpStartDate = new DateTime(info.ExpStartDate.Year, info.ExpStartDate.Month, info.ExpStartDate.Day, 0, 0, 0);
+                info.ExpEndDate = new DateTime(info.ExpEndDate.Year, info.ExpEndDate.Month, info.ExpEndDate.Day, 23, 59, 59);
+                ReturnValue retVal = tsrLogic.Insert(info);
             }
             catch (Exception ex)
             {

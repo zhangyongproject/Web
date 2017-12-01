@@ -1,5 +1,7 @@
 using System.Xml;
 using System.Data;
+using System;
+using System.Collections.Generic;
 
 namespace Pro.Common
 {
@@ -230,6 +232,74 @@ namespace Pro.Common
 
         }
 
+        public static XmlDocument CreateTimingTabledResultXml(DataTable dt, int pageIndex, int pageSize, int recordCount)
+        {
+            XmlDocument xmlDoc = CreateResultXml(0, "", "");
+            return CreateTimingTabledResultXml(xmlDoc, dt, pageIndex, pageSize, recordCount);
+
+        }
+
+        public static XmlDocument CreateTimingTabledResultXml(XmlDocument xmlDoc, DataTable dt, int pageIndex, int pageSize, int recordCount)
+        {
+
+            // <xml code = "0" msg = "成功" value="123">
+            //      <items pageindex="当前页" pagesize="每页显示行数" pagecount="总页数" recordcount="总记录数">         
+            //            <item><id>1</id><name>张三</name><age>18</age></item>
+            //            <item><id>2</id><name>李四</name><age>22</age></item>
+            //            ...
+            //      </items>
+            //</xml>
+            if (dt != null) //&& dt.Rows.Count > 0
+            {
+                XmlNode xmlRoot = xmlDoc.SelectSingleNode("xml");
+
+                int pageCount = CalcMaxPage(pageSize, recordCount);
+
+                XmlNode xmlItems = AddXmlNode(xmlRoot, "items");
+                AddAttribute(xmlItems, "pageindex", (pageIndex >= 0) ? pageIndex : 0);
+                AddAttribute(xmlItems, "pagesize", (pageSize > 0) ? pageSize : recordCount);
+                AddAttribute(xmlItems, "pagecount", (pageCount > 0) ? pageCount : 1);
+                AddAttribute(xmlItems, "recordcount", (recordCount > 0) ? recordCount : dt.Rows.Count);
+                AddAttribute(xmlItems, "curdate", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+                int startIndex = (pageIndex - 1) * pageSize;
+                int endIndex = pageIndex * pageSize;
+
+                for (int i = 0; i < dt.Rows.Count; ++i)
+                {
+                    if (pageIndex != 0 && pageSize != 0)
+                    {
+                        if (i < startIndex)
+                            continue;
+                        if (i >= endIndex)
+                            break;
+                    }
+
+                    DataRow dr = dt.Rows[i];
+                    XmlNode xmlItem = AddXmlNode(xmlItems, "item");
+                    //foreach (DataColumn dc in dt.Columns)
+                    //{
+                    //    if (dr[dc] is DateTime)
+                    //    {
+                    //        AddXmlNode(xmlItem, dc.ColumnName, ((DateTime)dr[dc]).ToString("yyyy-MM-dd HH:mm:ss").Replace("<", "&lt;").Replace(">", "&gt;"));
+                    //        if (dc.ColumnName == "ENDDATE")
+                    //            AddAttribute(xmlItem, "IsExpired", ((DateTime)dr[dc]) < DateTime.Now ? 1 : 0);
+                    //    }
+                    //    else
+                    //        AddXmlNode(xmlItem, dc.ColumnName, dr[dc].ToString().Replace("<", "&lt;").Replace(">", "&gt;"));
+                    //}
+
+                    foreach (DataColumn dc in dt.Columns)
+                        AddXmlNode(xmlItem, dc.ColumnName, dr[dc].ToString().Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;"));
+                }
+                return xmlDoc;
+            }
+            else
+            {
+                return CreateResultXml(-1000, "the datatable is null", "");
+            }
+        }
+
         /// <summary>
         /// DataTable 转换成 XML
         /// </summary>
@@ -260,6 +330,7 @@ namespace Pro.Common
                 AddAttribute(xmlItems, "pagesize", (pageSize > 0) ? pageSize : recordCount);
                 AddAttribute(xmlItems, "pagecount", (pageCount > 0) ? pageCount : 1);
                 AddAttribute(xmlItems, "recordcount", (recordCount > 0) ? recordCount : dt.Rows.Count);
+                AddAttribute(xmlItems, "curdate", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
                 int startIndex = (pageIndex-1) * pageSize;
                 int endIndex = pageIndex * pageSize;
@@ -277,7 +348,17 @@ namespace Pro.Common
                     DataRow dr = dt.Rows[i];
                     XmlNode xmlItem = AddXmlNode(xmlItems, "item");
                     foreach (DataColumn dc in dt.Columns)
-                        AddXmlNode(xmlItem, dc.ColumnName, dr[dc].ToString().Replace("<", "&lt;").Replace(">", "&gt;"));
+                    {
+                        if (dr[dc] is DateTime)
+                        {
+                            AddXmlNode(xmlItem, dc.ColumnName, ((DateTime)dr[dc]).ToString("yyyy-MM-dd HH:mm:ss").Replace("<", "&lt;").Replace(">", "&gt;"));
+                            if(dc.ColumnName == "ENDDATE")
+                                AddAttribute(xmlItem, "IsExpired", ((DateTime)dr[dc]) < DateTime.Now?1:0);
+                        }
+                        else
+                            AddXmlNode(xmlItem, dc.ColumnName, dr[dc].ToString().Replace("<", "&lt;").Replace(">", "&gt;"));
+                    }
+                        
                     //AddXmlNode(xmlItem, dc.ColumnName, dr[dc].ToString().Replace("&", "&amp;").Replace("<", "&lt;").Replace(">", "&gt;"));
                 }
                 return xmlDoc;

@@ -89,57 +89,63 @@
             <td class="tit" style="text-align: center">用户名
             </td>
             <td>
-                <input type="text" id="txtusername" style="width: 200px" maxlength="30" />
-                <label id="lblusername" style="width: 200px"></label>
+                <input type="text" id="txtusername" style="width:100%; display:block;" maxlength="30" />
+                <label id="lblusername" style="width:100%; display:block;"></label>
             </td>
             <td>
-                <label style="color: gray">(数字和英文字母组成)</label></td>
+                <label style="color: gray">(数字和英文字母组成)</label>
+            </td>
         </tr>
         <tr>
             <td class="tit" style="text-align: center">用户密码
             </td>
             <td>
-                <input type="password" id="txtuserpwd" style="width: 200px" maxlength="25" />
+                <input type="password" id="txtuserpwd" style="width:100%;" maxlength="25" />
             </td>
-            <td>
-                <label style="color: gray">(数字和英文字母组成)</label></td>
+            <td><label style="color: gray">(数字和英文字母组成)</label></td>
         </tr>
         <tr>
             <td class="tit" style="text-align: center">用户昵称
             </td>
             <td>
-                <input type="text" id="txtusernick" style="width: 200px" maxlength="30" />
+                <input type="text" id="txtusernick" style="width:100%;" maxlength="30" />
             </td>
             <td>
-                <label style="color: gray">(1～30，中文占2个)</label></td>
+                <label style="color: gray">(1～30，中文占2个)</label>
+
+            </td>
         </tr>
         <tr>
             <td class="tit" style="text-align: center">用户类型
             </td>
             <td>
-                <select id="sltusertype" style="width: 150px">
+                <select id="sltusertype" style="width:100%;">
                     <option value="0">管理员</option>
                     <option value="1" selected="selected">普通用户</option>
                 </select>
             </td>
+            <td></td>
         </tr>
         <tr>
             <td class="tit" style="text-align: center">手机号码
             </td>
             <td>
-                <input type="text" id="txtmobile" style="width: 200px" maxlength="11" />
+                <input type="text" id="txtmobile" style="width:100%;" maxlength="11" />
             </td>
+            <td></td>
         </tr>
         <tr>
             <td class="tit" align="center">描述
             </td>
             <td>
-                <textarea rows="5" cols="25" id="txtdesc">
+                <textarea rows="5" cols="25" id="txtdesc" style="width:100%;">
 
                 </textarea>
             </td>
             <td>
-                <label style="color: gray">(0～200，中文占2个)</label></td>
+                <label style="color: gray">(0～200，中文占2个)</label>
+
+            </td>
         </tr>
 
         <tr style="height: 40px; vertical-align: middle;">

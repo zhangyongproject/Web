@@ -41,9 +41,15 @@
                 <xsl:choose>
                   <xsl:when test="position() mod 2=1">
                     <xsl:attribute name="class">gd_item</xsl:attribute>
+                    <xsl:if test="@IsExpired &gt; 0">
+                      <xsl:attribute name="class">gd_itemred</xsl:attribute>
+                    </xsl:if>
                   </xsl:when>
                   <xsl:otherwise>
                     <xsl:attribute name="class">gd_alt</xsl:attribute>
+                    <xsl:if test="@IsExpired &gt; 0">
+                      <xsl:attribute name="class">gd_altred</xsl:attribute>
+                    </xsl:if>
                   </xsl:otherwise>
                 </xsl:choose>
                 <td align="center">

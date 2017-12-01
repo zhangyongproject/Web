@@ -43,7 +43,7 @@
                 if (retCode == 0) {
                     GetList();
                 }
-            }, 420, 300);
+            }, document.documentElement.clientWidth > 600 ? (document.documentElement.clientWidth - 100) : 600, document.documentElement.clientHeight > 400 ? (document.documentElement.clientHeight - 100) : 400);
         }
 
         function EditEquipment(eiid, einame) {
@@ -52,7 +52,7 @@
                 if (retCode == 0) {
                     GetList();
                 }
-            }, 420, 300);
+            }, document.documentElement.clientWidth > 600 ? (document.documentElement.clientWidth - 100) : 600, document.documentElement.clientHeight > 400 ? (document.documentElement.clientHeight - 100) : 400);
         }
 
         function DelEquipment(eiid) {

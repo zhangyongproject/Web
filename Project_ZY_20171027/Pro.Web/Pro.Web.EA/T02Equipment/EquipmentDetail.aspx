@@ -79,8 +79,8 @@
             <td class="tit" style="text-align: center">设备名称
             </td>
             <td>
-                <input type="text" id="txteiname" style="width: 200px" maxlength="30" />
-                <label id="lbleiname" style="width: 200px"></label>
+                <input type="text" id="txteiname" style="width: 100%;" maxlength="30" />
+                <label id="lbleiname" style="width: 100%;"></label>
             </td>
             <td>
                 <label style="color: gray">(1～30，中文占2个)</label></td>
@@ -89,7 +89,7 @@
             <td class="tit" style="text-align: center">IP列表
             </td>
             <td>
-                <textarea rows="5" cols="25" id="txtiplist">
+                <textarea rows="5" cols="25" id="txtiplist" style="width: 100%;">
                 </textarea>
             </td>
             <td>
@@ -99,7 +99,7 @@
             <td class="tit" style="text-align: center">描述
             </td>
             <td>
-                <textarea rows="5" cols="25" id="txtdesc">
+                <textarea rows="5" cols="25" id="txtdesc" style="width: 100%;">
 
                 </textarea>
             </td>

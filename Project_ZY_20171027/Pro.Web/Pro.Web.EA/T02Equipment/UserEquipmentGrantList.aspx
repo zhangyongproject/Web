@@ -20,8 +20,8 @@
         function Init(ret) {
             mXml = CreateXmlFromString(ret);
             var rootNode = mXml.selectSingleNode("xml");
-            SetSelOption($("sltuser"), mXml.selectSingleNode("xml/users"));
-            SetSelOption($("sltequipment"), mXml.selectSingleNode("xml/equipments"));
+            //SetSelOption($("sltuser"), mXml.selectSingleNode("xml/users"));
+            //SetSelOption($("sltequipment"), mXml.selectSingleNode("xml/equipments"));
 
             //var date = new Date();
             //$('txtbegintime').value = date.addMonth(-12).format("yyyy-MM-dd");
@@ -33,8 +33,8 @@
 
         function GetList() {
             hashtable = new Hashtable();
-            hashtable.add('userid', $j("#sltuser").val());
-            hashtable.add('eiid', $j("#sltequipment").val());
+            hashtable.add('username', $j("#txtusername").val());
+            hashtable.add('einame', $j("#txteiname").val());
             //hashtable.add('begintime', $j("#txtbegintime").val());
             //hashtable.add('endtime', $j("#txtendtime").val());
             objDataClient._PageIndex = 1;
@@ -56,7 +56,7 @@
                 if (retCode == 0) {
                     GetList();
                 }
-            }, 600, 450);
+            }, document.documentElement.clientWidth > 600 ? (document.documentElement.clientWidth - 100) : 600, document.documentElement.clientHeight > 400 ? (document.documentElement.clientHeight - 100) : 400);
         }
 
         function Edit(uegid) {
@@ -65,7 +65,7 @@
                 if (retCode == 0) {
                     GetList();
                 }
-            }, 420, 330);
+            }, document.documentElement.clientWidth > 600 ? (document.documentElement.clientWidth - 100) : 600, document.documentElement.clientHeight > 400 ? (document.documentElement.clientHeight - 100) : 400);
         }
 
         function Del(uegid) {
@@ -189,15 +189,17 @@
                 <td class="tit">用户名
                 </td>
                 <td>
-                    <select id="sltuser" style="width: 150px">
+                    <input type="text" id="txtusername" style="width: 120px" value="" /></td>
+<%--                    <select id="sltuser" style="width: 150px">
                         <option value=""></option>
-                    </select></td>
+                    </select></td>--%>
                 <td class="tit">设备名称
                 </td>
                 <td>
-                    <select id="sltequipment" style="width: 150px">
+                    <input type="text" id="txteiname" style="width: 120px" value="" /></td>
+   <%--                 <select id="sltequipment" style="width: 150px">
                         <option value=""></option>
-                    </select></td>
+                    </select></td>--%>
                 <td class="tit"><%--有效时间--%>  </td>
 <%--                <td style="width: 40%">
                     <input type="text" id="txtbegintime" onfocus=" WdatePicker({ dateFmt: 'yyyy-MM-dd', onpicked: function () { $('txtendtime').focus(); }, maxDate: '#F{$dp.$D(\'txtendtime\')}' })" class="Wdate" style="width: 130px;" />

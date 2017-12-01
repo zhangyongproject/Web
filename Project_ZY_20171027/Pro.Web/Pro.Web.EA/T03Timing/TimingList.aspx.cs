@@ -30,7 +30,7 @@ public partial class T03Timing_TimingList : BasePage
     protected override XmlDocument CreateInitInfo()
     {
         //删除过期设备
-        ReturnValue retVal = uegLogic.DeleteExpire(new UserEquipmentGrantInfo() { EndDate = DateTime.Now });
+        //ReturnValue retVal = uegLogic.DeleteExpire(new UserEquipmentGrantInfo() { EndDate = DateTime.Now });
         //if (retVal.IsSuccess == false) { return MyXml.CreateResultXml(-1, "删除过期授权设备时异常", string.Empty); }
 
         XmlDocument xmlDoc = MyXml.CreateResultXml(1, string.Empty, string.Empty);
@@ -41,7 +41,7 @@ public partial class T03Timing_TimingList : BasePage
         XmlNode grantequipmentsNode = MyXml.AddXmlNode(rootNode, "grantequipments");
         XmlNode notgrantequipmentsNode = MyXml.AddXmlNode(rootNode, "notgrantequipments");
         //用户对象
-        retVal = userLogic.GetUser(new UserInfo() { UserID = -1 });
+        ReturnValue retVal = userLogic.GetUser(new UserInfo() { UserID = -1 });
         if (retVal.IsSuccess == false) { return MyXml.CreateResultXml(-1, "加载用户时异常", string.Empty); }
         {//排序
             DataView dv     = retVal.RetDt.DefaultView;
@@ -120,7 +120,7 @@ public partial class T03Timing_TimingList : BasePage
         if (retVal.IsSuccess == false) { return MyXml.CreateTabledResultXml(new DataTable(), 0, 10, 0).InnerXml; }
         //
         //DataTable dt = Tools.GetDt4Drs(retVal.RetDt, Tools.GetStartRec(pageSize, pageIndex), Tools.GetEndRec(pageSize, pageIndex)) ?? new DataTable();
-        return MyXml.CreateTabledResultXml(retVal.RetDt, pageIndex, pageSize, retVal.RetDt.Rows.Count).InnerXml;
+        return MyXml.CreateTimingTabledResultXml(retVal.RetDt, pageIndex, pageSize, retVal.RetDt.Rows.Count).InnerXml;
     }
 
 
@@ -148,5 +148,16 @@ public partial class T03Timing_TimingList : BasePage
         ReturnValue retVal = tsrLogic.ReleaseIds((dic.ContainsKey("tsrid") ? dic["tsrid"] : "-1"));
         return MyXml.CreateResultXml(retVal.RetCode, retVal.RetMsg, string.Empty).InnerXml;
     }
-
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="strparam"></param>
+    /// <returns></returns>
+    public string Delete4Ids(string strparam)
+    {
+        Dictionary<string, string> dic = MyJson.JsonToDictionary(strparam);
+        //tsrid ==-1 添加 否则 修改
+        ReturnValue retVal = tsrLogic.Delete4Ids((dic.ContainsKey("tsrid") ? dic["tsrid"] : "-1"));
+        return MyXml.CreateResultXml(retVal.RetCode, retVal.RetMsg, string.Empty).InnerXml;
+    }
 }

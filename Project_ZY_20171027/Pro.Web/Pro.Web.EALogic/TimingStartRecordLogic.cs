@@ -69,5 +69,16 @@ namespace Pro.Web.EALogic
             if (string.IsNullOrEmpty(ids)) { return new ReturnValue(false, -2, "修改对象ID列表为空。"); }
             return tsrDAL.ReleaseIds(ids);
         }
+
+        /// <summary>
+        /// 批量删除记录
+        /// </summary>
+        /// <param name="info">记录ID支持逗号分隔多个</param>
+        /// <returns></returns>
+        public ReturnValue Delete4Ids(string ids)
+        {
+            if (string.IsNullOrEmpty(ids)) { return new ReturnValue(false, -2, "修改对象ID列表为空。"); }
+            return tsrDAL.Delete4Ids(ids);
+        }
     }
 }

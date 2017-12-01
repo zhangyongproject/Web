@@ -100,6 +100,9 @@ public partial class T02Equipment_UserEquipmentGrantDetail : BasePage
         string uegids = (dic.ContainsKey("uegids") ? dic["uegids"] : string.Empty);
         DateTime begintime = Tools.GetDateTime(dic.ContainsKey("begintime") ? dic["begintime"] : string.Empty, DateTime.Now);
         DateTime endtime = Tools.GetDateTime(dic.ContainsKey("endtime") ? dic["endtime"] : string.Empty, DateTime.Now);
+        begintime = new DateTime(begintime.Year, begintime.Month, begintime.Day, 0, 0, 0);
+        endtime = new DateTime(endtime.Year, endtime.Month, endtime.Day, 23, 59, 59);
+
         int errCnt = 0;
         ReturnValue retVal = null;
         try

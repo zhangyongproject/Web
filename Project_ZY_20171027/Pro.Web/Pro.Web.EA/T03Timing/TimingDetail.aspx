@@ -114,7 +114,7 @@
             ShowMultiSelectWindow("请选择已授权设备", xmlDoc, $("txtequipments").tag, function (value, text) {
                 $j("#txtequipments").val(text);
                 $j("#txtequipments").data("eiid", value);
-            }, 500);
+            }, document.documentElement.clientWidth > 600 ? (document.documentElement.clientWidth - 100) : 600, document.documentElement.clientHeight > 400 ? (document.documentElement.clientHeight - 100) : 400);
         }
 
 
@@ -127,7 +127,7 @@
         <tr>
             <td class="tit" style="text-align: center;">包名称
             </td>
-            <td colspan=3>
+            <td colspan="3">
                 <input type="text" id="txtpackname" style="width:100%;" maxlength="100" />
             </td>
             <td>
@@ -138,7 +138,7 @@
         <tr id="trUser">
             <td class="tit" style="text-align: center">用户
             </td>
-            <td colspan=3>
+            <td colspan="3">
                 <select id="sltuser" style="width:100%;">
                     <%--<option value=""></option>--%>
                 </select>
@@ -156,7 +156,7 @@
         </tr>--%>
         <tr>
             <td class="tit" style="text-align: center">授权设备</td>
-            <td colspan=3>
+            <td colspan="3">
                 <input type="text" id="txtequipments" style="width:100%;" value="" />
             </td>
             <td>
@@ -196,7 +196,7 @@
 
             <td class="tit" style="text-align: center">状态
             </td>
-            <td colspan=3>
+            <td colspan="3">
                 <select id="sltrelease" style="width:100%;" >
                     <option value="0">发布</option>
                     <option value="1" selected="selected">未发布</option>
@@ -206,7 +206,7 @@
         <tr>
             <td class="tit" style="text-align: center">描述
             </td>
-            <td colspan=3>
+            <td colspan="3">
                 <textarea rows="5" cols="25" id="txtdesc"  style="width:100%;">
 
                 </textarea>

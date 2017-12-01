@@ -158,16 +158,24 @@ function ShowMultiSelectWindow(strInfo, xmlDoc, defaultval, onSelectCallback, de
     defaultwidth = (defaultwidth) ? parseInt(defaultwidth) : 200;
     var rootNode = xmlDoc.selectSingleNode("xml"); if (rootNode == null) { alert("传入的xmlDoc参数异常，ShowSelectWindow函数调用出错"); return; }
     var strMessage = "<table style='width:" + defaultwidth + "px;'><tr><td>"
-        + "<input type=checkbox onclick=CheckAllClick(this," + rootNode.childNodes.length + ") id=c'hkitem_multi_all' style='vertical-align: middle;' />"
-        + " <label for=chkitem_multi_all title='全选/全清'>" + strInfo + "</label>"
+        + "<input type=checkbox onclick=CheckAllClick(this," + rootNode.childNodes.length + ") id='chkitem_multi_all' style='vertical-align: middle;' />"
+        + "<label for=chkitem_multi_all title='全选/全清'>" + strInfo + "</label>"
+        + "<input type='text' id='txtvalue' style='width: 120px; margin-left:5px; margin-right:5px' value='' />"
+        + "<input type='hidden' id='txtdefault' style='width: 120px'/>"
+        + "<input type='hidden' id='txtxml' style='width: 120px'/>"
+        + "<input type='button' id='btnSreach' value='查询' onclick='tablelistMultiQuery()'></input>"
+        + "<label id='chkitem_total'> 共 " + rootNode.childNodes.length + " 个 </label>"
         + "</td></tr>";
-    strMessage += "<tr><td><div style='width:100%;height:150px;OVERFLOW-Y: auto; OVERFLOW-X:hidden;border-style: inset; border-width: 2px;'><table width=100%>";
+
+    var height = document.documentElement.clientHeight > 200 ? (document.documentElement.clientHeight - 200) : 200;
+    strMessage += "<tr><td><div id='tablediv' style='width:100%;height:" + height +
+                "px;OVERFLOW-Y: auto; OVERFLOW-X:hidden;border-style: inset; border-width: 2px;'><table id='tablelist' width=100%>";
     for (var i = 0; i < rootNode.childNodes.length; i++) {
         var itemNode = rootNode.childNodes[i];
         var checked = ("," + defaultval + ",").indexOf("," + GetAttributeValue(itemNode, "data") + ",") > -1;
         strMessage += "<tr class=gd_item>";
         strMessage += "<td width=20><input id=chkitem_multi_" + i + " type=checkbox " + (checked ? "checked=true" : "") + " onclick=CheckRowClick(" + i + ")" + "></td>";
-        strMessage += "<td onclick=CheckRowClick(" + i + ") title='" + GetAttributeValue(itemNode, "value") + "'>" + GetAttributeValue(itemNode, "data") + "</td></tr>";
+        strMessage += "<td id=chkitem_multi_" + i + "value" + " onclick=CheckRowClick(" + i + ") title='" + GetAttributeValue(itemNode, "value") + "'>" + GetAttributeValue(itemNode, "data") + "</td></tr>";
     }
     strMessage += "</table></div>" + "</td></tr></table>";
 
@@ -175,34 +183,47 @@ function ShowMultiSelectWindow(strInfo, xmlDoc, defaultval, onSelectCallback, de
         if ((retCode == 0) && (onSelectCallback != null)) {
             var txt = "";
             var val = "";
-            for (var i = 0; i < rootNode.childNodes.length; i++) {
-                var itemNode = rootNode.childNodes[i];
-                var chkbox = $("chkitem_multi_" + i);
+            var checkitems = $j("input[type=radio]:checked ,input[type=checkbox][id!='chkitem_multi_all']:checked");
+            for (var i = 0; i < checkitems.size() ; i++) {
+                var chkbox = checkitems[i];
                 if (chkbox.checked) {
                     if (txt != "") { txt += ","; val += ","; }
-                    txt += GetAttributeValue(itemNode, "value");
-                    val += GetAttributeValue(itemNode, "data");
+                    txt += $(chkbox.id + "value").title;
+                    val += $(chkbox.id + "value").innerText;
                 }
             }
             onSelectCallback(txt, val);
         }
-    }, "选择框", 0);
+    }, strInfo, 0);
+    $('txtdefault').value = defaultval;
+    $('txtxml').value = xmlDoc.xml;
     defaultwidth = (defaultwidth != null) ? parseInt(defaultwidth) : 0;
     if (defaultwidth < 200) defaultwidth = 200;
-    if (defaultwidth > 400) defaultwidth = 400;
 }
-
 
 function ShowSingleSelectWindow(strInfo, xmlDoc, defaultval, onSelectCallback, defaultwidth) {
     var rootNode = xmlDoc.selectSingleNode("xml"); if (rootNode == null) { alert("传入的xmlDoc参数异常，ShowSelectWindow函数调用出错"); return; }
-    var strMessage = "<table class =gd style='width:100%;'>";
-    strMessage += "<tr><td><div style='width:100%;height:150px;OVERFLOW-Y: auto; OVERFLOW-X:hidden;border-style: inset; border-width: 1px;'><table width=100%>";
+
+    var strMessage = "<table style='width:" + defaultwidth + "px;'><tr><td>"
+    + "<label for=chkitem_multi_all title='全选/全清'>" + strInfo + "</label>"
+    + "<input type='text' id='txtvalue' style='width: 120px; margin-left:5px; margin-right:5px' value='' />"
+    + "<input type='hidden' id='txtdefault' style='width: 120px'/>"
+    + "<input type='hidden' id='txtxml' style='width: 120px'/>"
+    + "<input type='button' id='btnSreach' value='查询' onclick='tablelistSingleQuery()'></input>"
+    + "<label id='chkitem_total'> 共 " + rootNode.childNodes.length + " 个 </label>"
+    + "</td></tr>";
+
+    var height = document.documentElement.clientHeight > 200 ? (document.documentElement.clientHeight - 200) : 200;
+    strMessage += "<tr><td><div id='tablediv' style='width:100%;height:" + height +
+        "px;OVERFLOW-Y: auto; OVERFLOW-X:hidden;border-style: inset; border-width: 1px;'><table width=100%>";
     for (var i = 0; i < rootNode.childNodes.length; i++) {
         var itemNode = rootNode.childNodes[i];
         var checked = ("," + defaultval + ",").indexOf("," + GetAttributeValue(itemNode, "data") + ",") > -1;
         strMessage += "<tr class=gd_item>";
-        strMessage += "<td width=20><input name='rdo_item' id=radio_" + i + " type=radio " + (checked ? "checked=true" : "") + " onclick=CheckRowClick(" + i + ")" + "></td>";
-        strMessage += "<td onclick=CheckRowClick(" + i + ") title='" + GetAttributeValue(itemNode, "value") + "'>" + GetAttributeValue(itemNode, "data") + "</td></tr>";
+        strMessage += "<td width=20>"
+        strMessage += "<input name='rdo_item' id=radio_" + i + " type=radio " + (checked ? "checked=true" : "") + " onclick=CheckRowClick(" + i + ")" + ">"
+        strMessage += "</td>";
+        strMessage += "<td id=radio_" + i + "value" + " onclick=CheckRowClick(" + i + ") title='" + GetAttributeValue(itemNode, "value") + "'>" + GetAttributeValue(itemNode, "data") + "</td></tr>";
     }
     strMessage += "</table></div>" + "</td></tr></table>";
 
@@ -210,21 +231,22 @@ function ShowSingleSelectWindow(strInfo, xmlDoc, defaultval, onSelectCallback, d
         if ((retCode == 0) && (onSelectCallback != null)) {
             var txt = "";
             var val = "";
-            for (var i = 0; i < rootNode.childNodes.length; i++) {
-                var itemNode = rootNode.childNodes[i];
-                var chkbox = $("radio_" + i);
+            var checkitems = $j("input[type=radio]:checked ,input[type=checkbox][id!='chkitem_multi_all']:checked");
+            for (var i = 0; i < checkitems.size() ; i++) {
+                var chkbox = checkitems[i];
                 if (chkbox.checked) {
                     if (txt != "") { txt += ","; val += ","; }
-                    txt += GetAttributeValue(itemNode, "value");
-                    val += GetAttributeValue(itemNode, "data");
+                    txt += $(chkbox.id + "value").title;
+                    val += $(chkbox.id + "value").innerText;
                 }
             }
             onSelectCallback(txt, val);
         }
-    }, strInfo, 1);
+    }, strInfo, 0);
+    $('txtdefault').value = defaultval;
+    $('txtxml').value = xmlDoc.xml;
     defaultwidth = (defaultwidth != null) ? parseInt(defaultwidth) : 0;
     if (defaultwidth < 200) defaultwidth = 200;
-    if (defaultwidth > 400) defaultwidth = 400;
 }
 
 function CheckRowClick(idx) {
@@ -238,6 +260,65 @@ function CheckAllClick(sender, cnt) {
         chkbox.checked = sender.checked;
     }
     $j("input[type=button][value='确定']").attr("disabled", $j("input[type=radio]:checked ,input[type=checkbox]:checked").size() == 0);
+}
+function tablelistSingleQuery()
+{
+    var param = $('txtvalue').value;
+
+    if (param !== null || param !== undefined || param !== '') {
+        var defaultval = $('txtdefault').value;
+        var xml = $('txtxml').value;
+        var xmlDoc = CreateXmlFromString(xml);
+        var rootNode = xmlDoc.selectSingleNode("xml"); if (rootNode == null) { alert("传入的xmlDoc参数异常，ShowSelectWindow函数调用出错"); return; }
+        var strMessage = "";
+        //strMessage += "<tbody>";
+        var cnt = 0;
+        for (var i = 0; i < rootNode.childNodes.length; i++) {
+            var itemNode = rootNode.childNodes[i];
+            var data = GetAttributeValue(itemNode, "data");
+            if (data.indexOf(param) != -1)
+            {
+                var checked = ("," + defaultval + ",").indexOf("," + GetAttributeValue(itemNode, "data") + ",") > -1;
+                strMessage += "<tr class=gd_item>";
+                strMessage += "<td width=20>"
+                strMessage += "<input name='rdo_item' id=radio_" + cnt + " type=radio " + (checked ? "checked=true" : "") + " onclick=CheckRowClick(" + cnt + ")" + ">"
+                strMessage += "</td>";
+                strMessage += "<td id=radio_" + cnt + "value" + " onclick=CheckRowClick(" + cnt + ") title='" + GetAttributeValue(itemNode, "value") + "'>" + GetAttributeValue(itemNode, "data") + "</td></tr>";
+                cnt++;
+            }
+        }
+        //strMessage += "</tbody>";
+        $('chkitem_total').innerText = " 共 " + cnt + " 个 ";
+        $('tablediv').innerHTML = "<table id='tablelist' width=100%>" + strMessage + "</table>";
+    }
+}
+function tablelistMultiQuery() {
+    var param = $('txtvalue').value;
+
+    if (param !== null || param !== undefined || param !== '') {
+        var defaultval = $('txtdefault').value;
+        var xml = $('txtxml').value;
+        var xmlDoc = CreateXmlFromString(xml);
+        var rootNode = xmlDoc.selectSingleNode("xml"); if (rootNode == null) { alert("传入的xmlDoc参数异常，ShowSelectWindow函数调用出错"); return; }
+        var strMessage = "";
+        //strMessage += "<tbody>";
+        var cnt = 0;
+        for (var i = 0; i < rootNode.childNodes.length; i++) {
+            var itemNode = rootNode.childNodes[i];
+            var data = GetAttributeValue(itemNode, "data");
+            if (data.indexOf(param) != -1) {
+                var checked = ("," + defaultval + ",").indexOf("," + GetAttributeValue(itemNode, "data") + ",") > -1;
+                strMessage += "<tr class=gd_item>";
+                strMessage += "<td width=20><input id=chkitem_multi_" + cnt + " type=checkbox " + (checked ? "checked=true" : "") + " onclick=CheckRowClick(" + cnt + ")" + "></td>";
+                strMessage += "<td id=chkitem_multi_" + cnt + "value" + " onclick=CheckRowClick(" + cnt + ") title='" + GetAttributeValue(itemNode, "value") + "'>" + GetAttributeValue(itemNode, "data") + "</td></tr>";
+                cnt++;
+            }
+        }
+        //strMessage += "</tbody>";
+        $('chkitem_total').innerText = " 共 " + cnt + " 个 ";
+        $('chkitem_multi_all').onclick = function () { CheckAllClick($('chkitem_multi_all'), cnt) };
+        $('tablediv').innerHTML = "<table id='tablelist' width=100%>" + strMessage + "</table>";
+    }
 }
 
 function __OnMessageButtonClick(retCode, retValue) {

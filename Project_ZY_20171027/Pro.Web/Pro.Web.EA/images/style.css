@@ -191,6 +191,11 @@ input[type="text"] {height :18px;}
 .gd_alt:hover {background-color:#afff80;}
 .gd_item1:hover {background-color:#afff80;}
 
+.gd_itemred{ background-color:#ffffff; color:red}
+.gd_itemred:hover {background-color:#afff80; color:red}
+.gd_altred { background-color:#f1f1f1;  color:red}
+.gd_altred:hover {background-color:#afff80; color:red}
+
 /* bak
 .gd
 {

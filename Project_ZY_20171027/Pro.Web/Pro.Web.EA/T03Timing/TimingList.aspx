@@ -59,7 +59,7 @@
                 if (retCode == 0) {
                     GetList();
                 }
-            }, 600, 350);
+            }, document.documentElement.clientWidth > 600 ? (document.documentElement.clientWidth - 100) : 600, document.documentElement.clientHeight > 400 ? (document.documentElement.clientHeight - 100) : 400);
         }
 
         function Edit(tsrid) {
@@ -68,7 +68,7 @@
                 if (retCode == 0) {
                     GetList();
                 }
-            }, 450, 350);
+            }, document.documentElement.clientWidth > 600 ? (document.documentElement.clientWidth - 100) : 600, document.documentElement.clientHeight > 400 ? (document.documentElement.clientHeight - 100) : 400);
         }
 
         // 发布
@@ -116,8 +116,16 @@
         //批量发布，按钮状态判断
         function checkItem() {
             $j("#btnRelease").attr("disabled", $j("input[type='checkbox'][name='chk_item']:checked").size() == 0);
+            $j("#btnDel").attr("disabled", $j("input[type='checkbox'][name='chk_item']:checked").size() == 0);
         }
-
+        function comparestring(str1, str2) {
+            if (str1 > str2)
+                return 1;
+            else if (str1 == str2)
+                return 0;
+            else if (str1 < str2)
+                return -1;
+        }
         function SltRelease() {
             ShowConfirm("是否发布该记录？", "", function (code, value) {
                 if (code != 0) return;
@@ -142,6 +150,30 @@
                 });
             });
         }
+        function SltDel() {
+            ShowConfirm("是否要删除该记录？", "", function (code, value) {
+                if (code != 0) return;
+                tsrids = "";
+                $j("input[type='checkbox'][name='chk_item']:checked").each(function (idx) {
+                    tsrids += this.value + ",";
+                });
+                var wm = new WebMethodProxy(document.location, "Delete4Ids");
+                wm.AddParam("strparam", "{\"tsrid\":\"" + tsrids.substr(0, tsrids.length - 1) + "\"}");
+                wm.Call(function (ret) {
+                    if (ret == undefined) { return; }
+                    var xmlDoc = CreateXmlFromString(ret);
+                    var rootNode = xmlDoc.selectSingleNode("xml");
+                    var code = rootNode.getAttribute("code");
+                    if (code == "1") {
+                        ShowAlert("共选择" + tsrids.split(",").length + "条记录，已成功删除" + rootNode.getAttribute("value") + "条。");
+                        GetList();
+                    }
+                    else {
+                        window.alert(rootNode.getAttribute("msg"));
+                    }
+                });
+            });
+        }
         function Relation() {
 
         }
@@ -156,6 +188,7 @@
             <td>
                 <input type="button" class="input_btn" id="btnSreach" value="查询" onclick="GetList()" btnicon="btnIcon01.png" />
                 <input type="button" class="input_btn" id="btnAdd" value="添加" onclick="Add()" btnicon="btnIcon03.png" /> 
+                <input type="button" class="input_btn" id="btnDel" value="批量删除" disabled="disabled" onclick="SltDel()" btnicon="item.png" />
                 <input type="button" class="input_btn" id="btnRelease" value="批量发布" disabled="disabled" onclick="SltRelease()" btnicon="item.png" />
             </td>
             <td align="right" valign="bottom">

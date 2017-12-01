@@ -37,7 +37,7 @@
                 if (retCode == 0) {
                     GetList();
                 }
-            }, 450, 300);
+            }, document.documentElement.clientWidth > 600 ? (document.documentElement.clientWidth - 100) : 600, document.documentElement.clientHeight > 400 ? (document.documentElement.clientHeight - 100) : 400);
         }
 
         function EditUser(userid, username) {
@@ -46,7 +46,7 @@
                 if (retCode == 0) {
                     GetList();
                 }
-            }, 450, 300);
+            }, document.documentElement.clientWidth > 600 ? (document.documentElement.clientWidth - 100) : 600, document.documentElement.clientHeight > 400 ? (document.documentElement.clientHeight - 100) : 400);
         }
 
         function DelUser(userid) {
