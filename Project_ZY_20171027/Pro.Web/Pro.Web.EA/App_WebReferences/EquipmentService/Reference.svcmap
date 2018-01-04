@@ -21,8 +21,8 @@
     <MetadataSource Address="http://localhost:5000/Server/EquipmentService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="EquipmentService1.disco" MetadataType="Disco" ID="69bc0939-518e-4ef8-a175-c2931bb34616" SourceId="1" SourceUrl="http://localhost:5000/Server/EquipmentService.asmx?disco" />
-    <MetadataFile FileName="EquipmentService1.wsdl" MetadataType="Wsdl" ID="00b0ef7a-56a6-4731-a340-da249c1b7570" SourceId="1" SourceUrl="http://localhost:5000/Server/EquipmentService.asmx?wsdl" />
+    <MetadataFile FileName="EquipmentService1.disco" MetadataType="Disco" ID="f3d6d97f-fbe3-4f2e-a4dd-fab61f959579" SourceId="1" SourceUrl="http://localhost:5000/Server/EquipmentService.asmx?disco" />
+    <MetadataFile FileName="EquipmentService1.wsdl" MetadataType="Wsdl" ID="2208cc33-3c5d-425d-a8b3-71096c710813" SourceId="1" SourceUrl="http://localhost:5000/Server/EquipmentService.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

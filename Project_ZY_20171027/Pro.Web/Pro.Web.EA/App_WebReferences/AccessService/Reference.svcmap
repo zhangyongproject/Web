@@ -21,8 +21,8 @@
     <MetadataSource Address="http://localhost:5000/Server/AccessService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AccessService1.disco" MetadataType="Disco" ID="48aa1ecf-b767-4187-9edc-b6f99edd2886" SourceId="1" SourceUrl="http://localhost:5000/Server/AccessService.asmx?disco" />
-    <MetadataFile FileName="AccessService1.wsdl" MetadataType="Wsdl" ID="63082b60-0d5c-4575-bffc-b3e5e9b1055c" SourceId="1" SourceUrl="http://localhost:5000/Server/AccessService.asmx?wsdl" />
+    <MetadataFile FileName="AccessService1.disco" MetadataType="Disco" ID="6a477390-4701-4c5a-9219-18a2872a0f9f" SourceId="1" SourceUrl="http://localhost:5000/Server/AccessService.asmx?disco" />
+    <MetadataFile FileName="AccessService1.wsdl" MetadataType="Wsdl" ID="1c047d3f-7164-4ce1-a56a-3ef973220191" SourceId="1" SourceUrl="http://localhost:5000/Server/AccessService.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

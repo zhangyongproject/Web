@@ -21,8 +21,8 @@
     <MetadataSource Address="http://localhost:5000/Server/TimingService.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TimingService1.wsdl" MetadataType="Wsdl" ID="32aa45e9-0f46-4023-ae7b-d08350cbe956" SourceId="1" SourceUrl="http://localhost:5000/Server/TimingService.asmx?wsdl" />
-    <MetadataFile FileName="TimingService1.disco" MetadataType="Disco" ID="2e741343-e9b7-4218-abf2-054a2e7af94b" SourceId="1" SourceUrl="http://localhost:5000/Server/TimingService.asmx?disco" />
+    <MetadataFile FileName="TimingService1.wsdl" MetadataType="Wsdl" ID="229c12ec-5eee-4146-bf70-52557a1ca2f0" SourceId="1" SourceUrl="http://localhost:5000/Server/TimingService.asmx?wsdl" />
+    <MetadataFile FileName="TimingService1.disco" MetadataType="Disco" ID="b1670db5-04db-4652-91f1-f909b633b6a0" SourceId="1" SourceUrl="http://localhost:5000/Server/TimingService.asmx?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
